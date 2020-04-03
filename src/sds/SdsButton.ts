@@ -34,8 +34,8 @@ export default class SdsButton extends Button {
     const result = super[internal.template];
     result.content.append(html`
       <style>
-        @import url("/src/sds/common.css");
-        @import url("/src/sds/SdsButton.css");
+        @import url("src/sds/common.css");
+        @import url("src/sds/SdsButton.css");
       </style>
     `);
     return result;
