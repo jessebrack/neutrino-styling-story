@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TypeScript application using an Elix component</title>
+    <script src="dist/main.js" type="module"></script>
+
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      This page shows how Elix components can be used in the context of a
+      TypeScript application. This page shows two instances of the Elix
+      DateComboBox component. The first is created via markup; the second is
+      created at runtime in TypeScript. Both work the same way.
+    </p>
+    <elix-date-combo-box date="1 Jan 2020"></elix-date-combo-box>
+  </body>
+</html>
