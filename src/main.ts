@@ -1,5 +1,5 @@
 // Import the Elix components we want to use.
-import DateComboBox from "./node_modules/elix/define/DateComboBox.js";
+import DateComboBox from "../node_modules/elix/define/DateComboBox";
 
 // Instantiate an Elix component.
 const dateComboBox = new DateComboBox();
