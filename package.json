@@ -1,5 +1,5 @@
 {
-  "name": "gobi",
+  "name": "neutrino",
   "version": "1.0.0",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "7.1.1",
