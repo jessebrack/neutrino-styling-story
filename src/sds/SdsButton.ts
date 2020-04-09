@@ -3,20 +3,9 @@ import Button from "elix/src/base/Button.js";
 import html from "elix/src/core/html.js";
 
 /**
- * SDS variation of an Elix Button.
+ * SDS Button
  */
 export default class SdsButton extends Button {
-  /**
-   * SDS Buttons come with a set of variants to change the visual
-   * display depending on the action a user is taking
-   */
-  get variant() {
-    return this.variant;
-  }
-  set variant(variant) {
-    this[internal.setState]({ variant });
-  }
-
   [internal.render](changed) {
     super[internal.render](changed);
     // Add base class at firstRender
@@ -28,7 +17,7 @@ export default class SdsButton extends Button {
       // Remove all existing variant classes.
       const inner = this[internal.ids].inner;
       const variantClass = `lwc-button_${this[internal.state].variant}`;
-      inner.classList.forEach(existingClass => {
+      inner.classList.forEach((existingClass) => {
         if (
           existingClass.startsWith("lwc-button_") &&
           existingClass !== variantClass
@@ -50,5 +39,16 @@ export default class SdsButton extends Button {
       </style>
     `);
     return result;
+  }
+
+  /**
+   * SDS Buttons come with a set of variants to change the visual
+   * display depending on the action a user is taking
+   */
+  get variant() {
+    return this.variant;
+  }
+  set variant(variant) {
+    this[internal.setState]({ variant });
   }
 }

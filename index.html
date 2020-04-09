@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Neutrino</title>
-    <link rel="stylesheet" href="src/app/app.css" />
+    <link rel="stylesheet" href="public/css/main.css" />
     <script src="dist/app.js" type="module"></script>
 
     <style>
@@ -17,11 +17,24 @@
 
   <body>
     <h1>Salesforce Design System</h1>
+
     <h2>SdsButton</h2>
     <sds-button variant="neutral">Button</sds-button>
     <sds-button variant="brand">Button</sds-button>
     <sds-button variant="brand-outline">Button</sds-button>
     <sds-button>Text Button</sds-button>
+
+    <h2>Button Icon</h2>
+    <sds-button-icon
+      symbol="add"
+      variant="neutral"
+      size="medium"
+    ></sds-button-icon>
+
+    <h2>Icons</h2>
+    <sds-icon boundary-size="small"></sds-icon>
+    <sds-icon set="standard" symbol="opportunity"></sds-icon>
+    <sds-icon set="standard" symbol="case" size="large"></sds-icon>
 
     <h1>Elix Plain reference system</h1>
     <h2>BorderButton</h2>
