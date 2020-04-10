@@ -12,21 +12,21 @@ export default class SdsIcon extends ReactiveElement {
   }
 
   get boundarySize() {
-    return this.boundarySize;
+    return this[internal.state].boundarySize;
   }
   set boundarySize(boundarySize) {
     this[internal.setState]({ boundarySize });
   }
 
   get set() {
-    return this.set;
+    return this[internal.state].set;
   }
   set set(set) {
     this[internal.setState]({ set });
   }
 
   get symbol() {
-    return this.symbol;
+    return this[internal.state].symbol;
   }
   set symbol(symbol) {
     this[internal.setState]({ symbol });

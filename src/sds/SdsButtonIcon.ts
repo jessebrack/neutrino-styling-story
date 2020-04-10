@@ -50,14 +50,14 @@ export default class SdsButtonIcon extends SdsButton {
   }
 
   get size(): string {
-    return this.size;
+    return this[internal.state].size;
   }
   set size(size) {
     this[internal.setState]({ size });
   }
 
   get symbol(): string {
-    return this.symbol;
+    return this[internal.state].symbol;
   }
   set symbol(symbol) {
     this[internal.setState]({ symbol });
