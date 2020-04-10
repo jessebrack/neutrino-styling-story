@@ -3,34 +3,31 @@ import * as internal from "elix/src/base/internal.js";
 import Button from "elix/src/base/Button.js";
 import html from "elix/src/core/html.js";
 
-// type ButtonVariant =
-//   | "base"
-//   | "brand"
-//   | "destructive"
-//   | "inverse"
-//   | "neutral"
-//   | "success";
-
 /**
  * SDS Button
  */
 export default class SdsButton extends Button {
   [internal.render](changed) {
     super[internal.render](changed);
-    // Add base class at firstRender
-    if (this[internal.firstRender]) {
-      this[internal.ids].inner.classList.add("lwc-button");
-    }
-    // Append variant class, if attribute exist
+
+    // Apply variant class.
     if (changed.variant) {
-      // Remove all existing variant classes.
-      const inner = this[internal.ids].inner;
-      applyPrefixedCssClass(this, "lwc-button_", this[internal.state].variant);
+      applyPrefixedCssClass(
+        this[internal.ids].inner,
+        "lwc-button_",
+        this[internal.state].variant
+      );
     }
   }
 
   get [internal.template]() {
     const result = super[internal.template];
+
+    const inner = result.content.getElementById("inner");
+    if (inner) {
+      inner.classList.add("lwc-button");
+    }
+
     result.content.append(html`
       <style>
         @import url("src/sds/common.css");
@@ -41,7 +38,7 @@ export default class SdsButton extends Button {
   }
 
   /**
-   * The variant changes the appearance of the button.
+   * The specific appearance variation shown by the element.
    *
    * @default neutral
    */

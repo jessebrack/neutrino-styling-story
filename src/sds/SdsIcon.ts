@@ -16,15 +16,12 @@ export default class SdsIcon extends ReactiveElement {
     super[internal.render](changed);
 
     if (changed.size) {
-      applyPrefixedCssClass(
-        this[internal.ids].icon,
-        "lwc-icon_",
-        this[internal.state].size
-      );
+      const { size } = this[internal.state];
+      applyPrefixedCssClass(this[internal.ids].icon, "lwc-icon_", size);
       applyPrefixedCssClass(
         this[internal.ids].boundary,
         "lwc-icon-boundary_",
-        this[internal.state].boundarySize
+        size
       );
     }
 

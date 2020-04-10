@@ -1,26 +1,13 @@
+import { applyPrefixedCssClass } from "./utilities";
 import * as internal from "elix/src/base/internal.js";
+import Button from "elix/src/base/Button.js";
 import html from "elix/src/core/html.js";
-import SdsButton from "./SdsButton";
 import SdsIcon from "./SdsIcon";
-
-// type ButtonIconVariant =
-//   | "bare-inverse"
-//   | "bare"
-//   | "base"
-//   | "border-filled"
-//   | "border-inverse"
-//   | "border"
-//   | "brand"
-//   | "container"
-//   | "destructive"
-//   | "inverse"
-//   | "neutral"
-//   | "success";
 
 /**
  * SDS button with an icon
  */
-export default class SdsButtonIcon extends SdsButton {
+export default class SdsButtonIcon extends Button {
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
       variant: "bare",
@@ -32,10 +19,13 @@ export default class SdsButtonIcon extends SdsButton {
   [internal.render](changed) {
     super[internal.render](changed);
 
+    // Apply variant class.
     if (changed.variant) {
-      const variant = this[internal.state].variant;
-      const computedSizeClassName = `lwc-button-icon_${variant}`;
-      this[internal.ids].inner.classList.add(computedSizeClassName);
+      applyPrefixedCssClass(
+        this[internal.ids].inner,
+        "lwc-button-icon_",
+        this[internal.state].variant
+      );
     }
 
     if (changed.symbol) {
@@ -48,9 +38,6 @@ export default class SdsButtonIcon extends SdsButton {
     if (changed.size) {
       const icon = this[internal.ids].icon;
       const size = this[internal.state].size;
-      // if ("boundarySize" in icon) {
-      //   (<any>icon).boundarySize = size;
-      // }
       if ("size" in icon) {
         (<any>icon).size = size;
       }
@@ -87,11 +74,24 @@ export default class SdsButtonIcon extends SdsButton {
     result.content.append(
       html`
         <style>
+          @import url("src/sds/common.css");
           @import url("src/sds/SdsButtonIcon.css");
         </style>
       `
     );
 
     return result;
+  }
+
+  /**
+   * The specific appearance variation shown by the element.
+   *
+   * @default neutral
+   */
+  get variant(): string {
+    return this[internal.state].variant;
+  }
+  set variant(variant) {
+    this[internal.setState]({ variant });
   }
 }
