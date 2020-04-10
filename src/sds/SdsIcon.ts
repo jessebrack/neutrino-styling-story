@@ -60,7 +60,7 @@ export default class SdsIcon extends ReactiveElement {
   }
 
   get size() {
-    return this.size;
+    return this[internal.state].size;
   }
   set size(size) {
     this[internal.setState]({ size });
