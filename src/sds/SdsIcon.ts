@@ -5,8 +5,9 @@ import ReactiveElement from "elix/src/core/ReactiveElement.js";
 export default class SdsIcon extends ReactiveElement {
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
-      boundarySize: "",
+      boundarySize: "medium",
       set: "utility",
+      size: "medium",
       symbol: "add",
     });
   }
@@ -16,20 +17,6 @@ export default class SdsIcon extends ReactiveElement {
   }
   set boundarySize(boundarySize) {
     this[internal.setState]({ boundarySize });
-  }
-
-  get set() {
-    return this[internal.state].set;
-  }
-  set set(set) {
-    this[internal.setState]({ set });
-  }
-
-  get symbol() {
-    return this[internal.state].symbol;
-  }
-  set symbol(symbol) {
-    this[internal.setState]({ symbol });
   }
 
   [internal.render](changed) {
@@ -59,11 +46,25 @@ export default class SdsIcon extends ReactiveElement {
     }
   }
 
+  get set() {
+    return this[internal.state].set;
+  }
+  set set(set) {
+    this[internal.setState]({ set });
+  }
+
   get size() {
     return this[internal.state].size;
   }
   set size(size) {
     this[internal.setState]({ size });
+  }
+
+  get symbol() {
+    return this[internal.state].symbol;
+  }
+  set symbol(symbol) {
+    this[internal.setState]({ symbol });
   }
 
   get [internal.template]() {
