@@ -2,6 +2,14 @@ import * as internal from "elix/src/base/internal.js";
 import Button from "elix/src/base/Button.js";
 import html from "elix/src/core/html.js";
 
+// type ButtonVariant =
+//   | "base"
+//   | "brand"
+//   | "destructive"
+//   | "inverse"
+//   | "neutral"
+//   | "success";
+
 /**
  * SDS Button
  */
@@ -42,11 +50,12 @@ export default class SdsButton extends Button {
   }
 
   /**
-   * SDS Buttons come with a set of variants to change the visual
-   * display depending on the action a user is taking
+   * The variant changes the appearance of the button.
+   *
+   * @default neutral
    */
-  get variant() {
-    return this.variant;
+  get variant(): string {
+    return this[internal.state].variant;
   }
   set variant(variant) {
     this[internal.setState]({ variant });

@@ -3,6 +3,20 @@ import html from "elix/src/core/html.js";
 import SdsButton from "./SdsButton";
 import SdsIcon from "./SdsIcon";
 
+// type ButtonIconVariant =
+//   | "bare-inverse"
+//   | "bare"
+//   | "base"
+//   | "border-filled"
+//   | "border-inverse"
+//   | "border"
+//   | "brand"
+//   | "container"
+//   | "destructive"
+//   | "inverse"
+//   | "neutral"
+//   | "success";
+
 /**
  * SDS button with an icon
  */
@@ -35,14 +49,14 @@ export default class SdsButtonIcon extends SdsButton {
     }
   }
 
-  get size() {
+  get size(): string {
     return this.size;
   }
   set size(size) {
     this[internal.setState]({ size });
   }
 
-  get symbol() {
+  get symbol(): string {
     return this.symbol;
   }
   set symbol(symbol) {
@@ -71,12 +85,5 @@ export default class SdsButtonIcon extends SdsButton {
     );
 
     return result;
-  }
-
-  get variant() {
-    return this[internal.state].variant;
-  }
-  set variant(variant) {
-    this[internal.setState]({ variant });
   }
 }
