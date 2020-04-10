@@ -49,3 +49,5 @@ export default class SdsButton extends Button {
     this[internal.setState]({ variant });
   }
 }
+
+customElements.define("sds-button", SdsButton);

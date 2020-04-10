@@ -4,12 +4,20 @@ import Button from "elix/src/base/Button.js";
 import html from "elix/src/core/html.js";
 import SdsIcon from "./SdsIcon";
 
+// HACK: Force rollup to include SdsIcon, which we depend upon. If we comment
+// remove this reference, Rollup decides SdsIcon doesn't need to be included
+// before SdSButtonIcon. If SdsButtonIcon ultimately ends up getting defined
+// before SdsIcon, the component won't render correctly.
+if (SdsIcon) {
+}
+
 /**
  * SDS button with an icon
  */
 export default class SdsButtonIcon extends Button {
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
+      foo: SdsIcon,
       variant: "bare",
       symbol: "chevrondown",
       size: "medium",
@@ -95,3 +103,5 @@ export default class SdsButtonIcon extends Button {
     this[internal.setState]({ variant });
   }
 }
+
+customElements.define("sds-button-icon", SdsButtonIcon);

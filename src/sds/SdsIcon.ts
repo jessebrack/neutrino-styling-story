@@ -76,3 +76,5 @@ export default class SdsIcon extends ReactiveElement {
     `;
   }
 }
+
+customElements.define("sds-icon", SdsIcon);
