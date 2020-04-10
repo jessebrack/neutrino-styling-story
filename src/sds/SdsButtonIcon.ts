@@ -39,17 +39,21 @@ export default class SdsButtonIcon extends SdsButton {
     }
 
     if (changed.symbol) {
-      (<SdsIcon>this[internal.ids].icon).symbol = this[internal.state].symbol;
+      const icon = this[internal.ids].icon;
+      if ("symbol" in icon) {
+        (<any>icon).symbol = this[internal.state].symbol;
+      }
     }
 
     if (changed.size) {
-      const icon = <SdsIcon>this[internal.ids].icon;
+      const icon = this[internal.ids].icon;
       const size = this[internal.state].size;
-      icon.boundarySize = size;
-      // REVIEW: Changing size should also update icon size too, correct?
-      // If so, should we expose boundarySize as a property, or just
-      // let SdsIcon calculate that internally to match the icon size?
-      icon.size = size;
+      // if ("boundarySize" in icon) {
+      //   (<any>icon).boundarySize = size;
+      // }
+      if ("size" in icon) {
+        (<any>icon).size = size;
+      }
     }
   }
 

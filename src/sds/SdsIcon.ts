@@ -1,3 +1,4 @@
+import { applyPrefixedCssClass } from "./utilities";
 import * as internal from "elix/src/base/internal.js";
 import * as template from "elix/src/core/template.js";
 import ReactiveElement from "elix/src/core/ReactiveElement.js";
@@ -5,42 +6,37 @@ import ReactiveElement from "elix/src/core/ReactiveElement.js";
 export default class SdsIcon extends ReactiveElement {
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
-      boundarySize: "medium",
       set: "utility",
       size: "medium",
       symbol: "add",
     });
   }
 
-  get boundarySize() {
-    return this[internal.state].boundarySize;
-  }
-  set boundarySize(boundarySize) {
-    this[internal.setState]({ boundarySize });
-  }
-
   [internal.render](changed) {
     super[internal.render](changed);
 
     if (changed.size) {
-      const computedSizeClassName = `lwc-icon_${this[internal.state].size}`;
-      this[internal.ids].icon.classList.add(computedSizeClassName);
-    }
-
-    if (changed.boundarySize) {
-      const { boundarySize } = this[internal.state];
-      const computedSizeClassName = `lwc-icon-boundary_${boundarySize}`;
-      this[internal.ids].boundary.classList.add(computedSizeClassName);
+      applyPrefixedCssClass(
+        this[internal.ids].icon,
+        "lwc-icon_",
+        this[internal.state].size
+      );
+      applyPrefixedCssClass(
+        this[internal.ids].boundary,
+        "lwc-icon-boundary_",
+        this[internal.state].boundarySize
+      );
     }
 
     if (changed.set || changed.symbol) {
-      const computedSizeClassName = `lwc-icon-${this[internal.state].set}-${
-        this[internal.state].symbol
-      }`;
-      this[internal.ids].icon.classList.add(computedSizeClassName);
-      const path = `public/icons/${this[internal.state].set}/symbols.svg#${
-        this[internal.state].symbol
-      }`;
+      const { set, symbol } = this[internal.state];
+      applyPrefixedCssClass(
+        this[internal.ids].icon,
+        `lwc-icon-${set}-`,
+        symbol
+      );
+
+      const path = `public/icons/${set}/symbols.svg#${symbol}`;
       const useEl = this[internal.ids].icon.querySelector("use");
       useEl.setAttribute("xlink:href", path);
     }

@@ -1,3 +1,4 @@
+import { applyPrefixedCssClass } from "./utilities";
 import * as internal from "elix/src/base/internal.js";
 import Button from "elix/src/base/Button.js";
 import html from "elix/src/core/html.js";
@@ -24,17 +25,7 @@ export default class SdsButton extends Button {
     if (changed.variant) {
       // Remove all existing variant classes.
       const inner = this[internal.ids].inner;
-      const variantClass = `lwc-button_${this[internal.state].variant}`;
-      inner.classList.forEach((existingClass) => {
-        if (
-          existingClass.startsWith("lwc-button_") &&
-          existingClass !== variantClass
-        ) {
-          inner.classList.remove(existingClass);
-        }
-      });
-      // Add the new variant class.
-      inner.classList.add(variantClass);
+      applyPrefixedCssClass(this, "lwc-button_", this[internal.state].variant);
     }
   }
 
