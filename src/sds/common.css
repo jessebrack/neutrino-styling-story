@@ -15,10 +15,6 @@
 	color: var(--lwc-color-text, #080707);
 }
 
-:host:not(:has(slot:has-assigned)) {
-	display: none;
-}
-
 main {
 	display: block;
 }

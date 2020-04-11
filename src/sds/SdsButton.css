@@ -123,6 +123,7 @@
 	padding-right: 1rem;
 	-webkit-transition: border 0.15s linear;
 	transition: border 0.15s linear;
+	--lwc-c-button-color-text: var(--lwc-brand-accessible, #0070d2);
 	--lwc-c-button-color-background: var(
 		--lwc-c-button-neutral-color-background,
 		white

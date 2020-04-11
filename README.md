@@ -4,4 +4,4 @@
 1. `cd` into the new folder.
 1. `npm install`
 1. `npm run build` or `npm run watch`
-1. `npx http-server`, open http://localhost:8080
+1. `npm start`, open http://localhost:8080

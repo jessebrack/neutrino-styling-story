@@ -6,13 +6,6 @@
     <title>Neutrino</title>
     <link rel="stylesheet" href="public/css/main.css" />
     <script src="dist/app.js" type="module"></script>
-
-    <style>
-      body {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 15px;
-      }
-    </style>
   </head>
 
   <body>
@@ -20,20 +13,28 @@
 
     <h2>SdsButton</h2>
     <sds-button variant="neutral">Button</sds-button>
+    <sds-button variant="neutral" disabled>Button</sds-button>
     <sds-button variant="brand">Button</sds-button>
+    <sds-button variant="brand" disabled>Button</sds-button>
     <sds-button variant="brand-outline">Button</sds-button>
+    <sds-button variant="destructive">Button</sds-button>
+    <sds-button variant="destructive-text">Button</sds-button>
+    <sds-button variant="success">Button</sds-button>
     <sds-button>Text Button</sds-button>
+    <sds-button disabled>Text Button</sds-button>
 
     <h2>Button Icon</h2>
-    <sds-button-icon
-      symbol="add"
-      variant="neutral"
-      size="small"
-    ></sds-button-icon>
+    <sds-button-icon></sds-button-icon>
+    <sds-button-icon disabled></sds-button-icon>
+    <sds-button-icon variant="neutral"></sds-button-icon>
+    <sds-button-icon variant="neutral" disabled></sds-button-icon>
+    <sds-button-icon variant="brand" symbol="search"></sds-button-icon>
+    <sds-button-icon variant="brand" symbol="search" disabled></sds-button-icon>
 
     <h2>Icons</h2>
-    <sds-icon size="small"></sds-icon>
-    <sds-icon set="standard" symbol="opportunity"></sds-icon>
+    <sds-icon></sds-icon>
+    <sds-icon variant="success" symbol="like"></sds-icon>
+    <sds-icon set="standard" symbol="opportunity" size="medium"></sds-icon>
     <sds-icon set="standard" symbol="case" size="large"></sds-icon>
 
     <h1>Elix Plain reference system</h1>

@@ -19,7 +19,7 @@ export default class SdsButtonIcon extends Button {
     return Object.assign(super[internal.defaultState], {
       foo: SdsIcon,
       variant: "bare",
-      symbol: "chevrondown",
+      symbol: "add",
       size: "medium",
     });
   }
@@ -36,6 +36,7 @@ export default class SdsButtonIcon extends Button {
       );
     }
 
+    // Get symbol and pass it to icon component
     if (changed.symbol) {
       const icon = this[internal.ids].icon;
       if ("symbol" in icon) {
@@ -43,27 +44,14 @@ export default class SdsButtonIcon extends Button {
       }
     }
 
+    // Get size and set it to the icon boundarySize
     if (changed.size) {
       const icon = this[internal.ids].icon;
       const size = this[internal.state].size;
-      if ("size" in icon) {
-        (<any>icon).size = size;
+      if ("boundarySize" in icon) {
+        (<any>icon).boundarySize = size;
       }
     }
-  }
-
-  get size(): string {
-    return this[internal.state].size;
-  }
-  set size(size) {
-    this[internal.setState]({ size });
-  }
-
-  get symbol(): string {
-    return this[internal.state].symbol;
-  }
-  set symbol(symbol) {
-    this[internal.setState]({ symbol });
   }
 
   get [internal.template]() {
@@ -94,13 +82,39 @@ export default class SdsButtonIcon extends Button {
   /**
    * The specific appearance variation shown by the element.
    *
-   * @default neutral
+   * @default bare
    */
   get variant(): string {
     return this[internal.state].variant;
   }
   set variant(variant) {
     this[internal.setState]({ variant });
+  }
+
+  /**
+   * The dimensions of the button icon. Value gets passed down to icon component
+   * to set boundarySize.
+   *
+   * @default medium
+   */
+  get size(): string {
+    return this[internal.state].size;
+  }
+  set size(size) {
+    this[internal.setState]({ size });
+  }
+
+  /**
+   * Points to name of ID in sprite sheet. Value gets passed down to icon component.
+   * Name of symbol needs to exist as an id in the sprite sheet to display.
+   *
+   * @default add
+   */
+  get symbol(): string {
+    return this[internal.state].symbol;
+  }
+  set symbol(symbol) {
+    this[internal.setState]({ symbol });
   }
 }
 
