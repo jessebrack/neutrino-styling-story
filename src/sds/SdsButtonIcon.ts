@@ -17,7 +17,6 @@ if (SdsIcon) {
 export default class SdsButtonIcon extends Button {
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
-      foo: SdsIcon,
       variant: "bare",
       symbol: "add",
       size: "medium",
