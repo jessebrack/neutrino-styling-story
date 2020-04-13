@@ -10,7 +10,8 @@ import ReactiveElement from "elix/src/core/ReactiveElement.js";
  *  - Action: Represent actions a user can take on any given screen.
  *  - Standard: Represent entities and objects within Salesforce. [In PoC]
  *  - Custom: For the identity of user created objects.
- *  - Doctypes: Doctype icons represent a type of file when a preview or image is unavailable
+ *  - Doctypes: Doctype icons represent a type of file when a preview or image
+ *    is unavailable
  *
  * @param {string} boundarySize Sets dimensions of bounding container holding the SVG.
  * @param {string} size Sets dimensions of the SVG icon.
@@ -27,13 +28,15 @@ export default class SdsIcon extends ReactiveElement {
   get boundarySize(): string {
     return this[internal.state].boundarySize;
   }
-  set boundarySize(boundarySize) {
+  set boundarySize(boundarySize: string) {
     this[internal.setState]({ boundarySize });
   }
 
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
+      boundarySize: null,
       set: "utility",
+      size: "x-small",
       symbol: "add",
     });
   }
@@ -42,25 +45,30 @@ export default class SdsIcon extends ReactiveElement {
     super[internal.render](changed);
 
     /**
-     * Every icon comes with a boundary, this boundary size can be alter independently from the icon size.
-     * Sizes range from x-large to xx-small. Changing the boundary will not change the size of the icon.
+     * Every icon comes with a boundary, this boundary size can be alter
+     * independently from the icon size. Sizes range from x-large to xx-small.
+     * Changing the boundary will not change the size of the icon.
      *
      * By default, the icon boundary is the size of the icon.
      */
-    if (changed.boundarySize) {
-      const { boundarySize } = this[internal.state];
+    if (changed.boundarySize || changed.size) {
+      const { boundarySize, size } = this[internal.state];
+      // Use boundarySize if defined, otherwise use size as boundary size.
+      const applyBoundarySize = boundarySize || size;
       applyPrefixedCssClass(
         this[internal.ids].boundary,
         "lwc-icon-boundary_",
-        boundarySize
+        applyBoundarySize
       );
     }
 
     /**
-     * Icons accept a sizing class that will change the dimensions of the SVG icon.
-     * Sizes range from x-large to xx-small. Changing the size of the icon is independent of the icons boundary size.
+     * Icons accept a sizing class that will change the dimensions of the SVG
+     * icon. Sizes range from x-large to xx-small. Changing the size of the icon
+     * is independent of the icons boundary size.
      *
-     * By default, utility icons are 16px by 16px. For action, custom, doctype, and standard sets, the default is 24px by 24px.
+     * By default, utility icons are "small" (16px by 16px). For action, custom,
+     * doctype, and standard sets, the default is 24px by 24px.
      */
     if (changed.size) {
       const { size } = this[internal.state];
@@ -68,8 +76,9 @@ export default class SdsIcon extends ReactiveElement {
     }
 
     /**
-     * Five separate SVG sprites are used to create icons — action, custom, doctype, standard and utility.
-     * Link to the icon SVG sprite by targeting the icon’s hash/ID value in the use href attribute.
+     * Five separate SVG sprites are used to create icons — action, custom,
+     * doctype, standard and utility. Link to the icon SVG sprite by targeting
+     * the icon’s hash/ID value in the use href attribute.
      */
     if (changed.set || changed.symbol) {
       const { set, symbol } = this[internal.state];
@@ -85,10 +94,12 @@ export default class SdsIcon extends ReactiveElement {
     }
 
     /**
-     * Icons can have their color modified by overriding the CSS custom property, --lwc-c-icon-color inside of :host.
+     * Icons can have their color modified by overriding the CSS custom
+     * property, --lwc-c-icon-color inside of :host.
      *
-     * SDS provide three color variants for user feedback states such as success, warning, and error.
-     * SDS also provides a muted color variant where an icon doesn't required as much emphasis.
+     * SDS provide three color variants for user feedback states such as
+     * success, warning, and error. SDS also provides a muted color variant
+     * where an icon doesn't required as much emphasis.
      */
     if (changed.variant) {
       const { variant } = this[internal.state];
