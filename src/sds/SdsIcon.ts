@@ -19,6 +19,18 @@ import ReactiveElement from "elix/src/core/ReactiveElement.js";
  * @param {string} variant Sets color variant on SVG icon.
  */
 export default class SdsIcon extends ReactiveElement {
+  /**
+   * Sets dimensions of bounding container holding the SVG.
+   *
+   * @default null
+   */
+  get boundarySize(): string {
+    return this[internal.state].boundarySize;
+  }
+  set boundarySize(boundarySize) {
+    this[internal.setState]({ boundarySize });
+  }
+
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
       set: "utility",
@@ -109,18 +121,6 @@ export default class SdsIcon extends ReactiveElement {
   }
 
   /**
-   * Sets dimensions of bounding container holding the SVG.
-   *
-   * @default null
-   */
-  get boundarySize(): string {
-    return this[internal.state].boundarySize;
-  }
-  set boundarySize(boundarySize) {
-    this[internal.setState]({ boundarySize });
-  }
-
-  /**
    * Points to name of ID in sprite sheet.
    * Name of symbol needs to exist as an id in the sprite sheet to display.
    *
@@ -131,16 +131,6 @@ export default class SdsIcon extends ReactiveElement {
   }
   set symbol(symbol) {
     this[internal.setState]({ symbol });
-  }
-
-  /**
-   * Sets color variant on SVG icon.
-   */
-  get variant(): string {
-    return this[internal.state].variant;
-  }
-  set variant(variant) {
-    this[internal.setState]({ variant })
   }
 
   get [internal.template]() {
@@ -157,6 +147,16 @@ export default class SdsIcon extends ReactiveElement {
         </span>
       </span>
     `;
+  }
+
+  /**
+   * Sets color variant on SVG icon.
+   */
+  get variant(): string {
+    return this[internal.state].variant;
+  }
+  set variant(variant) {
+    this[internal.setState]({ variant });
   }
 }
 

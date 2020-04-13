@@ -53,6 +53,32 @@ export default class SdsButtonIcon extends Button {
     }
   }
 
+  /**
+   * The dimensions of the button icon. Value gets passed down to icon component
+   * to set boundarySize.
+   *
+   * @default medium
+   */
+  get size(): string {
+    return this[internal.state].size;
+  }
+  set size(size) {
+    this[internal.setState]({ size });
+  }
+
+  /**
+   * Points to name of ID in sprite sheet. Value gets passed down to icon component.
+   * Name of symbol needs to exist as an id in the sprite sheet to display.
+   *
+   * @default add
+   */
+  get symbol(): string {
+    return this[internal.state].symbol;
+  }
+  set symbol(symbol) {
+    this[internal.setState]({ symbol });
+  }
+
   get [internal.template]() {
     const result = super[internal.template];
 
@@ -88,32 +114,6 @@ export default class SdsButtonIcon extends Button {
   }
   set variant(variant) {
     this[internal.setState]({ variant });
-  }
-
-  /**
-   * The dimensions of the button icon. Value gets passed down to icon component
-   * to set boundarySize.
-   *
-   * @default medium
-   */
-  get size(): string {
-    return this[internal.state].size;
-  }
-  set size(size) {
-    this[internal.setState]({ size });
-  }
-
-  /**
-   * Points to name of ID in sprite sheet. Value gets passed down to icon component.
-   * Name of symbol needs to exist as an id in the sprite sheet to display.
-   *
-   * @default add
-   */
-  get symbol(): string {
-    return this[internal.state].symbol;
-  }
-  set symbol(symbol) {
-    this[internal.setState]({ symbol });
   }
 }
 
