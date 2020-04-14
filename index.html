@@ -13,8 +13,20 @@
 
       #componentGrid {
         display: grid;
-        grid-gap: 1rem;
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      #componentGrid > * {
+        box-sizing: border-box;
+        padding: 0.5rem;
+      }
+
+      h1 {
+        background: white;
+        padding-bottom: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 1;
       }
 
       h2 {
@@ -32,7 +44,7 @@
   <body>
     <div id="componentGrid">
       <h1>Salesforce Design System</h1>
-      <h1>Plain reference system</h1>
+      <h1>Plain reference design system</h1>
 
       <div>
         <h2>SDS Button</h2>
@@ -51,6 +63,38 @@
       <div>
         <h2>Plain Button</h2>
         <elix-border-button>Button</elix-border-button>
+      </div>
+
+      <div>
+        <h2>SDS Icon</h2>
+        <sds-icon></sds-icon>
+        <sds-icon variant="success" symbol="like"></sds-icon>
+        <sds-icon set="standard" symbol="opportunity" size="medium"></sds-icon>
+        <sds-icon set="standard" symbol="case" size="large"></sds-icon>
+      </div>
+
+      <div>
+        <h2></h2>
+        <!-- Not in Plain -->
+      </div>
+
+      <div>
+        <h2>SDS Button Icon</h2>
+        <sds-button-icon></sds-button-icon>
+        <sds-button-icon disabled></sds-button-icon>
+        <sds-button-icon variant="neutral"></sds-button-icon>
+        <sds-button-icon variant="neutral" disabled></sds-button-icon>
+        <sds-button-icon variant="brand" symbol="search"></sds-button-icon>
+        <sds-button-icon
+          variant="brand"
+          symbol="search"
+          disabled
+        ></sds-button-icon>
+      </div>
+
+      <div>
+        <h2></h2>
+        <!-- Not in Plain -->
       </div>
 
       <div>
@@ -105,38 +149,6 @@
           <elix-menu-item>Three</elix-menu-item>
           <elix-menu-item>Four</elix-menu-item>
         </elix-menu-button>
-      </div>
-
-      <div>
-        <h2>SDS Button Icon</h2>
-        <sds-button-icon></sds-button-icon>
-        <sds-button-icon disabled></sds-button-icon>
-        <sds-button-icon variant="neutral"></sds-button-icon>
-        <sds-button-icon variant="neutral" disabled></sds-button-icon>
-        <sds-button-icon variant="brand" symbol="search"></sds-button-icon>
-        <sds-button-icon
-          variant="brand"
-          symbol="search"
-          disabled
-        ></sds-button-icon>
-      </div>
-
-      <div>
-        <h2></h2>
-        <!-- Not in Plain -->
-      </div>
-
-      <div>
-        <h2>SDS Icon</h2>
-        <sds-icon></sds-icon>
-        <sds-icon variant="success" symbol="like"></sds-icon>
-        <sds-icon set="standard" symbol="opportunity" size="medium"></sds-icon>
-        <sds-icon set="standard" symbol="case" size="large"></sds-icon>
-      </div>
-
-      <div>
-        <h2></h2>
-        <!-- Not in Plain -->
       </div>
     </div>
   </body>
