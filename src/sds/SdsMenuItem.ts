@@ -10,6 +10,10 @@ export default class SDSMenuItem extends MenuItem {
         @import url("src/sds/SDSMenu.css");
 
         /* TODO: Fold into CSS */
+        :host {
+          outline: none;
+        }
+        
         :host([selected]) .lwc-menuitem__content {
           background-color:var(--lwc-c-menuitem-color-background-active, #f3f2f2);
         }
