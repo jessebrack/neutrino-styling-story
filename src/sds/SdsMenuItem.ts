@@ -2,12 +2,12 @@ import * as internal from "elix/src/base/internal.js";
 import * as template from "elix/src/core/template.js";
 import MenuItem from "elix/src/base/MenuItem.js";
 
-export default class SdsMenuItem extends MenuItem {
+export default class SDSMenuItem extends MenuItem {
   get [internal.template]() {
     return template.html`
       <style>
         @import url("src/sds/common.css");
-        @import url("src/sds/SdsMenu.css");
+        @import url("src/sds/SDSMenu.css");
 
         /* TODO: Fold into CSS */
         :host([selected]) .lwc-menuitem__content {
@@ -23,4 +23,4 @@ export default class SdsMenuItem extends MenuItem {
   }
 }
 
-customElements.define("sds-menu-item", SdsMenuItem);
+customElements.define("sds-menu-item", SDSMenuItem);

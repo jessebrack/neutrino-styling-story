@@ -5,7 +5,7 @@ import Menu from "elix/src/base/Menu.js";
 /**
  * SDS Menu
  */
-export default class SdsMenu extends Menu {
+export default class SDSMenu extends Menu {
   get [internal.template]() {
     const result = super[internal.template];
     const wrapper = result.content.getElementById("content");
@@ -23,4 +23,4 @@ export default class SdsMenu extends Menu {
   }
 }
 
-customElements.define("sds-menu", SdsMenu);
+customElements.define("sds-menu", SDSMenu);

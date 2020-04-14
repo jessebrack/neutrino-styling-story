@@ -1,7 +1,7 @@
-import SdsButton from "./SdsButton";
-import SdsButtonIcon from "./SdsButtonIcon";
-import SdsIcon from "./SdsIcon";
-import SdsMenu from "./SdsMenu";
-import SdsMenuItem from "./SdsMenuItem";
+import SDSButton from "./SDSButton";
+import SDSButtonIcon from "./SDSButtonIcon";
+import SDSIcon from "./SDSIcon";
+import SDSMenu from "./SDSMenu";
+import SDSMenuItem from "./SDSMenuItem";
 
-export { SdsButton, SdsButtonIcon, SdsIcon, SdsMenu, SdsMenuItem };
+export { SDSButton, SDSButtonIcon, SDSIcon, SDSMenu, SDSMenuItem };

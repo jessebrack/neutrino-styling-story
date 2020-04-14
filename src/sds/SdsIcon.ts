@@ -4,7 +4,7 @@ import * as template from "elix/src/core/template.js";
 import ReactiveElement from "elix/src/core/ReactiveElement.js";
 
 /**
- * SdsIcon represents common User Interface iconography. The Icons comes in 5 sets:
+ * SDSIcon represents common User Interface iconography. The Icons comes in 5 sets:
  *
  *  - Utility: No Background, common user interface iconography [In PoC]
  *  - Action: Represent actions a user can take on any given screen.
@@ -19,7 +19,7 @@ import ReactiveElement from "elix/src/core/ReactiveElement.js";
  * @param {string} symbol Points to name of ID in sprite sheet.
  * @param {string} variant Sets color variant on SVG icon.
  */
-export default class SdsIcon extends ReactiveElement {
+export default class SDSIcon extends ReactiveElement {
   /**
    * Sets dimensions of bounding container holding the SVG.
    *
@@ -148,7 +148,7 @@ export default class SdsIcon extends ReactiveElement {
     return template.html`
       <style>
         @import url("src/sds/common.css");
-        @import url("src/sds/SdsIcon.css");
+        @import url("src/sds/SDSIcon.css");
       </style>
       <span id="boundary" class="lwc-icon-boundary" part="icon-source">
 				<span id="icon" class="lwc-icon">
@@ -171,4 +171,4 @@ export default class SdsIcon extends ReactiveElement {
   }
 }
 
-customElements.define("sds-icon", SdsIcon);
+customElements.define("sds-icon", SDSIcon);

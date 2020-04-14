@@ -2,19 +2,19 @@ import { applyPrefixedCssClass } from "./utilities";
 import * as internal from "elix/src/base/internal.js";
 import Button from "elix/src/base/Button.js";
 import html from "elix/src/core/html.js";
-import SdsIcon from "./SdsIcon";
+import SDSIcon from "./SDSIcon";
 
-// HACK: Force rollup to include SdsIcon, which we depend upon. If we comment
-// remove this reference, Rollup decides SdsIcon doesn't need to be included
-// before SdSButtonIcon. If SdsButtonIcon ultimately ends up getting defined
-// before SdsIcon, the component won't render correctly.
-if (SdsIcon) {
+// HACK: Force rollup to include SDSIcon, which we depend upon. If we comment
+// remove this reference, Rollup decides SDSIcon doesn't need to be included
+// before SDSButtonIcon. If SDSButtonIcon ultimately ends up getting defined
+// before SDSIcon, the component won't render correctly.
+if (SDSIcon) {
 }
 
 /**
  * SDS button with an icon
  */
-export default class SdsButtonIcon extends Button {
+export default class SDSButtonIcon extends Button {
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
       variant: "bare",
@@ -96,7 +96,7 @@ export default class SdsButtonIcon extends Button {
       html`
         <style>
           @import url("src/sds/common.css");
-          @import url("src/sds/SdsButtonIcon.css");
+          @import url("src/sds/SDSButtonIcon.css");
         </style>
       `
     );
@@ -117,4 +117,4 @@ export default class SdsButtonIcon extends Button {
   }
 }
 
-customElements.define("sds-button-icon", SdsButtonIcon);
+customElements.define("sds-button-icon", SDSButtonIcon);

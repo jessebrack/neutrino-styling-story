@@ -6,7 +6,7 @@ import html from "elix/src/core/html.js";
 /**
  * SDS Button
  */
-export default class SdsButton extends Button {
+export default class SDSButton extends Button {
   [internal.render](changed) {
     super[internal.render](changed);
 
@@ -31,7 +31,7 @@ export default class SdsButton extends Button {
     result.content.append(html`
       <style>
         @import url("src/sds/common.css");
-        @import url("src/sds/SdsButton.css");
+        @import url("src/sds/SDSButton.css");
       </style>
     `);
     return result;
@@ -50,4 +50,4 @@ export default class SdsButton extends Button {
   }
 }
 
-customElements.define("sds-button", SdsButton);
+customElements.define("sds-button", SDSButton);
