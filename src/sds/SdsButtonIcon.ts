@@ -4,10 +4,7 @@ import Button from "elix/src/base/Button.js";
 import html from "elix/src/core/html.js";
 import SDSIcon from "./SDSIcon";
 
-// HACK: Force rollup to include SDSIcon, which we depend upon. If we comment
-// remove this reference, Rollup decides SDSIcon doesn't need to be included
-// before SDSButtonIcon. If SDSButtonIcon ultimately ends up getting defined
-// before SDSIcon, the component won't render correctly.
+// HACK: Force rollup to include components we depend upon.
 if (SDSIcon) {
 }
 
