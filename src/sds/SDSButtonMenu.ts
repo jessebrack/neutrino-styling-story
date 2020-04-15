@@ -18,7 +18,7 @@ if (SDSPopup) {
  * Note: SDS calls this a "button menu"; Elix calls this a "menu button".
  * They're the same thing.
  */
-export default class SdsButtonMenu extends MenuButton {
+export default class SDSButtonMenu extends MenuButton {
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
       menuPartType: SDSMenu,
@@ -80,4 +80,4 @@ export default class SdsButtonMenu extends MenuButton {
   }
 }
 
-customElements.define("sds-button-menu", SdsButtonMenu);
+customElements.define("sds-button-menu", SDSButtonMenu);
