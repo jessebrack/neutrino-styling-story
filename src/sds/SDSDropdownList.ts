@@ -59,13 +59,6 @@ export default class SDSDropdownList extends DropdownList {
   get [internal.template]() {
     const result = super[internal.template];
 
-    /**
-     * When an icon is inside of a button element, SDS CSS expects there to
-     * be a wrapping element. Doing that here.
-     */
-    const icon = result.content.getElementById("popupToggle");
-    icon.parentNode.append(html``);
-
     result.content.append(
       html`
         <style>
@@ -81,6 +74,7 @@ export default class SDSDropdownList extends DropdownList {
         </style>
       `
     );
+
     return result;
   }
 
