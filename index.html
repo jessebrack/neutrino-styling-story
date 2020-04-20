@@ -38,6 +38,32 @@
         height: 100px;
         width: 100px;
       }
+
+      /* TODO: Remove card styles once carousels use real card components */
+      .card {
+        border-radius: 0.25rem;
+        border: 1px solid #dddbda;
+        box-sizing: border-box;
+      }
+
+      .cardDetails {
+        background: #fff;
+        box-sizing: border-box;
+        height: 6.625rem;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      .cardImage {
+        display: block;
+        max-width: 100%;
+      }
+
+      .cardTitle {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0;
+      }
     </style>
   </head>
 
@@ -132,7 +158,7 @@
       </div>
 
       <div>
-        <h2>SDS ButtonMenu</h2>
+        <h2>SDS Button Menu</h2>
         <sds-button-menu variant="neutral">
           <sds-menu-item>One</sds-menu-item>
           <sds-menu-item>Two</sds-menu-item>
@@ -142,7 +168,7 @@
       </div>
 
       <div>
-        <h2>Plain MenuButton</h2>
+        <h2>Plain Menu Button</h2>
         <elix-menu-button>
           <elix-menu-item>One</elix-menu-item>
           <elix-menu-item>Two</elix-menu-item>
@@ -152,7 +178,7 @@
       </div>
 
       <div>
-        <h2>SDS DropdownList</h2>
+        <h2>SDS Dropdown List</h2>
         <sds-dropdown-list variant="neutral">
           <sds-menu-item>One</sds-menu-item>
           <sds-menu-item>Two</sds-menu-item>
@@ -162,13 +188,86 @@
       </div>
 
       <div>
-        <h2>Plain DropdownList</h2>
+        <h2>Plain Dropdown List</h2>
         <elix-dropdown-list>
           <div>One</div>
           <div>Two</div>
           <div>Three</div>
-          <div>Four</elix-menu-item>
+          <div>Four</div>
         </elix-dropdown-list>
+      </div>
+
+      <div>
+        <h2>Lightning Carousel</h2>
+        <lightning-carousel>
+          <!-- TODO: Replace fake card with real card component -->
+          <div class="card">
+            <img class="cardImage" src="public/images/carousel-01.jpg" />
+            <div class="cardDetails">
+              <div class="cardTitle">First Card</div>
+              <div class="cardDescription">First card description</div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="cardImage" src="public/images/carousel-02.jpg" />
+            <div class="cardDetails">
+              <div class="cardTitle">Second Card</div>
+              <div class="cardDescription">Second card description</div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="cardImage" src="public/images/carousel-03.jpg" />
+            <div class="cardDetails">
+              <div class="cardTitle">Third Card</div>
+              <div class="cardDescription">Third card description</div>
+            </div>
+          </div>
+        </lightning-carousel>
+      </div>
+
+      <div>
+        <h2>Plain Carousel</h2>
+        <elix-carousel>
+          <img class="cardImage" src="public/images/carousel-01.jpg" />
+          <img class="cardImage" src="public/images/carousel-02.jpg" />
+          <img class="cardImage" src="public/images/carousel-03.jpg" />
+        </elix-carousel>
+      </div>
+
+      <div>
+        <h2>Lightning Carousel Slideshow</h2>
+        <lightning-carousel-slideshow>
+          <div class="card">
+            <img class="cardImage" src="public/images/carousel-01.jpg" />
+            <div class="cardDetails">
+              <div class="cardTitle">First Card</div>
+              <div class="cardDescription">First card description</div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="cardImage" src="public/images/carousel-02.jpg" />
+            <div class="cardDetails">
+              <div class="cardTitle">Second Card</div>
+              <div class="cardDescription">Second card description</div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="cardImage" src="public/images/carousel-03.jpg" />
+            <div class="cardDetails">
+              <div class="cardTitle">Third Card</div>
+              <div class="cardDescription">Third card description</div>
+            </div>
+          </div>
+        </lightning-carousel-slideshow>
+      </div>
+
+      <div>
+        <h2>Plain Carousel Slideshow</h2>
+        <elix-carousel-slideshow>
+          <img class="cardImage" src="public/images/carousel-01.jpg" />
+          <img class="cardImage" src="public/images/carousel-02.jpg" />
+          <img class="cardImage" src="public/images/carousel-03.jpg" />
+        </elix-carousel-slideshow>
       </div>
     </div>
   </body>

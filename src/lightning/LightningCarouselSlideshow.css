@@ -1,0 +1,17 @@
+[part~="play-button"] {
+  background: white;
+  bottom: 0;
+  color: #706e6b;
+  height: 1.25rem;
+  line-height: 1;
+  line-height: 1;
+  position: absolute;
+  vertical-align: middle;
+  width: 1.25rem;
+}
+
+[part~="icon"] {
+  fill: currentColor;
+  height: 1rem;
+  width: 1rem;
+}
