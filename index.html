@@ -64,6 +64,14 @@
         font-weight: 600;
         margin: 0;
       }
+
+      .elixImage {
+        display: inline-block;
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        vertical-align: middle;
+      }
     </style>
   </head>
 
@@ -227,10 +235,10 @@
 
       <div>
         <h2>Plain Carousel</h2>
-        <elix-carousel>
-          <img class="cardImage" src="public/images/carousel-01.jpg" />
-          <img class="cardImage" src="public/images/carousel-02.jpg" />
-          <img class="cardImage" src="public/images/carousel-03.jpg" />
+        <elix-carousel arrow-button-overlap="false" proxy-list-overlap="false">
+          <img class="elixImage" src="public/images/elix-image-01.jpg" />
+          <img class="elixImage" src="public/images/elix-image-02.jpg" />
+          <img class="elixImage" src="public/images/elix-image-03.jpg" />
         </elix-carousel>
       </div>
 
@@ -263,10 +271,13 @@
 
       <div>
         <h2>Plain Carousel Slideshow</h2>
-        <elix-carousel-slideshow>
-          <img class="cardImage" src="public/images/carousel-01.jpg" />
-          <img class="cardImage" src="public/images/carousel-02.jpg" />
-          <img class="cardImage" src="public/images/carousel-03.jpg" />
+        <elix-carousel-slideshow
+          arrow-button-overlap="false"
+          proxy-list-overlap="false"
+        >
+          <img class="elixImage" src="public/images/elix-image-01.jpg" />
+          <img class="elixImage" src="public/images/elix-image-02.jpg" />
+          <img class="elixImage" src="public/images/elix-image-03.jpg" />
         </elix-carousel-slideshow>
       </div>
     </div>
