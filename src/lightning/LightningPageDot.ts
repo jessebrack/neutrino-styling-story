@@ -1,5 +1,5 @@
-import * as internal from "elix/src/base/internal";
 import Button from "elix/src/base/Button";
+import * as internal from "elix/src/base/internal";
 import html from "elix/src/core/html";
 
 /**

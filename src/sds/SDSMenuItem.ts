@@ -1,6 +1,6 @@
 import * as internal from "elix/src/base/internal.js";
-import * as template from "elix/src/core/template.js";
 import MenuItem from "elix/src/base/MenuItem.js";
+import * as template from "elix/src/core/template.js";
 
 export default class SDSMenuItem extends MenuItem {
   get [internal.template]() {

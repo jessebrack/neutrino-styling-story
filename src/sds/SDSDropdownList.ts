@@ -1,5 +1,5 @@
-import * as internal from "elix/src/base/internal.js";
 import DropdownList from "elix/src/base/DropdownList.js";
+import * as internal from "elix/src/base/internal.js";
 import html from "elix/src/core/html.js";
 import SDSButton from "./SDSButton";
 import SDSMenu from "./SDSMenu";

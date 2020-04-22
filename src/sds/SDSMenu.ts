@@ -1,6 +1,6 @@
 import * as internal from "elix/src/base/internal.js";
-import html from "elix/src/core/html.js";
 import Menu from "elix/src/base/Menu.js";
+import html from "elix/src/core/html.js";
 
 /**
  * SDS Menu

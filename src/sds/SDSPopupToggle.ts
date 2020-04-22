@@ -1,6 +1,6 @@
 import * as internal from "elix/src/core/internal.js";
-import * as template from "elix/src/core/template.js";
 import ReactiveElement from "elix/src/core/ReactiveElement.js";
+import * as template from "elix/src/core/template.js";
 import SDSIcon from "./SDSIcon";
 
 // HACK: Force rollup to include components we depend upon.

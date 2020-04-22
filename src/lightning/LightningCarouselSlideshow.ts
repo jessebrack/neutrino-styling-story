@@ -1,11 +1,11 @@
-import { forwardFocus } from "elix/src/core/dom.js";
-import * as internal from "elix/src/base/internal.js";
 import CarouselSlideshow from "elix/src/base/CarouselSlideshow.js";
 import CenteredStrip from "elix/src/base/CenteredStrip.js";
-import html from "elix/src/core/html.js";
-import LightningPageDot from "./LightningPageDot";
-import SDSButtonIcon from "../sds/SDSButtonIcon";
+import * as internal from "elix/src/base/internal.js";
 import SlidingStage from "elix/src/base/SlidingStage.js";
+import { forwardFocus } from "elix/src/core/dom.js";
+import html from "elix/src/core/html.js";
+import SDSButtonIcon from "../sds/SDSButtonIcon";
+import LightningPageDot from "./LightningPageDot";
 
 // HACK: Force rollup to include components we depend upon.
 if (SDSButtonIcon) {

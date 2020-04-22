@@ -7,8 +7,8 @@ export default [
     output: {
       dir: "dist",
       format: "module",
-      sourcemap: true
+      sourcemap: true,
     },
-    plugins: [resolve(), typescript()]
-  }
+    plugins: [resolve(), typescript()],
+  },
 ];

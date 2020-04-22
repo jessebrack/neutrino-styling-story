@@ -1,7 +1,7 @@
 import * as internal from "elix/src/base/internal.js";
-import * as template from "elix/src/core/template.js";
-import html from "elix/src/core/html.js";
 import OverlayFrame from "elix/src/base/OverlayFrame.js";
+import html from "elix/src/core/html.js";
+import * as template from "elix/src/core/template.js";
 
 /**
  * SDS overlay frame.

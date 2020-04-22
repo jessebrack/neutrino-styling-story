@@ -1,7 +1,7 @@
-import { applyPrefixedCssClass } from "./utilities";
-import * as internal from "elix/src/base/internal.js";
 import Button from "elix/src/base/Button.js";
+import * as internal from "elix/src/base/internal.js";
 import html from "elix/src/core/html.js";
+import { applyPrefixedCssClass } from "./utilities";
 
 /**
  * SDS Button

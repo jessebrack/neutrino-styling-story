@@ -1,7 +1,7 @@
-import { applyPrefixedCssClass } from "./utilities";
 import * as internal from "elix/src/base/internal.js";
-import * as template from "elix/src/core/template.js";
 import ReactiveElement from "elix/src/core/ReactiveElement.js";
+import * as template from "elix/src/core/template.js";
+import { applyPrefixedCssClass } from "./utilities";
 
 /**
  * SDSIcon represents common User Interface iconography. The Icons comes in 5 sets:
