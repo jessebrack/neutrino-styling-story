@@ -4,10 +4,12 @@
   "engines": {
     "node": "^10.0.0"
   },
+  "dependencies": {
+    "elix": "github:elix/elix#master"
+  },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "7.1.3",
     "@rollup/plugin-typescript": "4.1.1",
-    "elix": "github:elix/elix#master",
     "rollup": "2.6.1",
     "ts-loader": "7.0.0",
     "tslib": "1.11.1",
