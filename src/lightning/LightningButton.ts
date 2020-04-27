@@ -1,12 +1,12 @@
 import Button from "elix/src/base/Button.js";
 import * as internal from "elix/src/base/internal.js";
 import html from "elix/src/core/html.js";
-import { applyPrefixedCssClass } from "./utilities";
+import { applyPrefixedCssClass } from "../utilities";
 
 /**
- * SDS Button
+ * Lightning Button
  */
-export default class SDSButton extends Button {
+export default class LightningButton extends Button {
   [internal.render](changed) {
     super[internal.render](changed);
 
@@ -31,7 +31,7 @@ export default class SDSButton extends Button {
     result.content.append(html`
       <style>
         @import url("src/sds/common.css");
-        @import url("src/sds/SDSButton.css");
+        @import url("src/lightning/LightningButton.css");
       </style>
     `);
     return result;
@@ -50,4 +50,4 @@ export default class SDSButton extends Button {
   }
 }
 
-customElements.define("sds-button", SDSButton);
+customElements.define("lightning-button", LightningButton);

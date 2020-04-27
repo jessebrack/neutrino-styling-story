@@ -2,12 +2,12 @@ import * as internal from "elix/src/base/internal.js";
 import MenuItem from "elix/src/base/MenuItem.js";
 import * as template from "elix/src/core/template.js";
 
-export default class SDSMenuItem extends MenuItem {
+export default class LightningMenuItem extends MenuItem {
   get [internal.template]() {
     return template.html`
       <style>
         @import url("src/sds/common.css");
-        @import url("src/sds/SDSMenu.css");
+        @import url("src/lightning/LightningMenu.css");
 
         /* TODO: Fold into CSS */
         :host {
@@ -27,4 +27,4 @@ export default class SDSMenuItem extends MenuItem {
   }
 }
 
-customElements.define("sds-menu-item", SDSMenuItem);
+customElements.define("lightning-menu-item", LightningMenuItem);

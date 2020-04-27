@@ -1,36 +1,36 @@
 import DropdownList from "elix/src/base/DropdownList.js";
 import * as internal from "elix/src/base/internal.js";
 import html from "elix/src/core/html.js";
-import SDSButton from "./SDSButton";
-import SDSMenu from "./SDSMenu";
-import SDSPopup from "./SDSPopup";
-import SDSPopupToggle from "./SDSPopupToggle";
+import LightningButton from "./LightningButton";
+import LightningMenu from "./LightningMenu";
+import LightningPopup from "./LightningPopup";
+import LightningPopupToggle from "./LightningPopupToggle";
 
 // HACK: Force rollup to include components we depend upon.
-if (SDSButton) {
+if (LightningButton) {
 }
-if (SDSMenu) {
+if (LightningMenu) {
 }
-if (SDSPopup) {
+if (LightningPopup) {
 }
-if (SDSPopupToggle) {
+if (LightningPopupToggle) {
 }
 
 /**
- * SDS dropdown list.
+ * Lightning dropdown list.
  *
- * SDS blueprints refer to this as a picklist, while the closest Lightning
+ * Lightning blueprints refer to this as a picklist, while the closest Lightning
  * component to this is called a "combo box" — but to the rest of the world, a
  * combo box includes an editable input element.
  */
-export default class SDSDropdownList extends DropdownList {
+export default class LightningDropdownList extends DropdownList {
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
       horizontalAlign: "stretch",
-      menuPartType: SDSMenu,
-      popupPartType: SDSPopup,
-      popupTogglePartType: SDSPopupToggle,
-      sourcePartType: SDSButton,
+      menuPartType: LightningMenu,
+      popupPartType: LightningPopup,
+      popupTogglePartType: LightningPopupToggle,
+      sourcePartType: LightningButton,
     });
   }
 
@@ -86,4 +86,4 @@ export default class SDSDropdownList extends DropdownList {
   }
 }
 
-customElements.define("sds-dropdown-list", SDSDropdownList);
+customElements.define("lightning-dropdown-list", LightningDropdownList);

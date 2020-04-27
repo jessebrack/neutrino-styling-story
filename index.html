@@ -77,34 +77,42 @@
 
   <body>
     <div id="componentGrid">
-      <h1>Salesforce Design System</h1>
+      <h1>Lightning design system</h1>
       <h1>Plain reference design system</h1>
 
       <div>
-        <h2>SDS Button</h2>
-        <sds-button variant="neutral">Button</sds-button>
-        <sds-button variant="neutral" disabled>Button</sds-button>
-        <sds-button variant="brand">Button</sds-button>
-        <sds-button variant="brand" disabled>Button</sds-button>
-        <sds-button variant="brand-outline">Button</sds-button>
-        <sds-button variant="destructive">Button</sds-button>
-        <sds-button variant="destructive-text">Button</sds-button>
-        <sds-button variant="success">Button</sds-button>
-        <sds-button>Text Button</sds-button>
-        <sds-button disabled>Text Button</sds-button>
+        <h2>LightningButton</h2>
+        <lightning-button variant="neutral">Button</lightning-button>
+        <lightning-button variant="neutral" disabled>Button</lightning-button>
+        <lightning-button variant="brand">Button</lightning-button>
+        <lightning-button variant="brand" disabled>Button</lightning-button>
+        <lightning-button variant="brand-outline">Button</lightning-button>
+        <lightning-button variant="destructive">Button</lightning-button>
+        <lightning-button variant="destructive-text">Button</lightning-button>
+        <lightning-button variant="success">Button</lightning-button>
+        <lightning-button>Text Button</lightning-button>
+        <lightning-button disabled>Text Button</lightning-button>
       </div>
 
       <div>
-        <h2>Plain Button</h2>
+        <h2>PlainButton</h2>
         <elix-border-button>Button</elix-border-button>
       </div>
 
       <div>
-        <h2>SDS Icon</h2>
-        <sds-icon></sds-icon>
-        <sds-icon variant="success" symbol="like"></sds-icon>
-        <sds-icon set="standard" symbol="opportunity" size="medium"></sds-icon>
-        <sds-icon set="standard" symbol="case" size="large"></sds-icon>
+        <h2>LightningIcon</h2>
+        <lightning-icon></lightning-icon>
+        <lightning-icon variant="success" symbol="like"></lightning-icon>
+        <lightning-icon
+          set="standard"
+          symbol="opportunity"
+          size="medium"
+        ></lightning-icon>
+        <lightning-icon
+          set="standard"
+          symbol="case"
+          size="large"
+        ></lightning-icon>
       </div>
 
       <div>
@@ -113,17 +121,23 @@
       </div>
 
       <div>
-        <h2>SDS Button Icon</h2>
-        <sds-button-icon></sds-button-icon>
-        <sds-button-icon disabled></sds-button-icon>
-        <sds-button-icon variant="neutral"></sds-button-icon>
-        <sds-button-icon variant="neutral" disabled></sds-button-icon>
-        <sds-button-icon variant="brand" symbol="search"></sds-button-icon>
-        <sds-button-icon
+        <h2>LightningButtonIcon</h2>
+        <lightning-button-icon></lightning-button-icon>
+        <lightning-button-icon disabled></lightning-button-icon>
+        <lightning-button-icon variant="neutral"></lightning-button-icon>
+        <lightning-button-icon
+          variant="neutral"
+          disabled
+        ></lightning-button-icon>
+        <lightning-button-icon
+          variant="brand"
+          symbol="search"
+        ></lightning-button-icon>
+        <lightning-button-icon
           variant="brand"
           symbol="search"
           disabled
-        ></sds-button-icon>
+        ></lightning-button-icon>
       </div>
 
       <div>
@@ -132,31 +146,31 @@
       </div>
 
       <div>
-        <h2>SDS Overlay Frame</h2>
-        <sds-overlay-frame>
+        <h2>LightningOverlayFrame</h2>
+        <lightning-overlay-frame>
           <div class="placeholder"></div>
-        </sds-overlay-frame>
+        </lightning-overlay-frame>
       </div>
 
       <div>
-        <h2>Plain Overlay Frame</h2>
+        <h2>PlainOverlayFrame</h2>
         <elix-overlay-frame>
           <div class="placeholder"></div>
         </elix-overlay-frame>
       </div>
 
       <div>
-        <h2>SDS Menu</h2>
-        <sds-menu variant="neutral">
-          <sds-menu-item>One</sds-menu-item>
-          <sds-menu-item>Two</sds-menu-item>
-          <sds-menu-item>Three</sds-menu-item>
-          <sds-menu-item>Four</sds-menu-item>
-        </sds-menu>
+        <h2>LightningMenu</h2>
+        <lightning-menu variant="neutral">
+          <lightning-menu-item>One</lightning-menu-item>
+          <lightning-menu-item>Two</lightning-menu-item>
+          <lightning-menu-item>Three</lightning-menu-item>
+          <lightning-menu-item>Four</lightning-menu-item>
+        </lightning-menu>
       </div>
 
       <div>
-        <h2>Plain Menu</h2>
+        <h2>PlainMenu</h2>
         <elix-menu>
           <elix-menu-item>One</elix-menu-item>
           <elix-menu-item>Two</elix-menu-item>
@@ -166,17 +180,17 @@
       </div>
 
       <div>
-        <h2>SDS Button Menu</h2>
-        <sds-button-menu variant="neutral">
-          <sds-menu-item>One</sds-menu-item>
-          <sds-menu-item>Two</sds-menu-item>
-          <sds-menu-item>Three</sds-menu-item>
-          <sds-menu-item>Four</sds-menu-item>
-        </sds-button-menu>
+        <h2>LightningButtonMenu</h2>
+        <lightning-button-menu variant="neutral">
+          <lightning-menu-item>One</lightning-menu-item>
+          <lightning-menu-item>Two</lightning-menu-item>
+          <lightning-menu-item>Three</lightning-menu-item>
+          <lightning-menu-item>Four</lightning-menu-item>
+        </lightning-button-menu>
       </div>
 
       <div>
-        <h2>Plain Menu Button</h2>
+        <h2>PlainMenuButton</h2>
         <elix-menu-button>
           <elix-menu-item>One</elix-menu-item>
           <elix-menu-item>Two</elix-menu-item>
@@ -186,17 +200,17 @@
       </div>
 
       <div>
-        <h2>SDS Dropdown List</h2>
-        <sds-dropdown-list variant="neutral">
-          <sds-menu-item>One</sds-menu-item>
-          <sds-menu-item>Two</sds-menu-item>
-          <sds-menu-item>Three</sds-menu-item>
-          <sds-menu-item>Four</sds-menu-item>
-        </sds-dropdown-list>
+        <h2>LightningDropdownList</h2>
+        <lightning-dropdown-list variant="neutral">
+          <lightning-menu-item>One</lightning-menu-item>
+          <lightning-menu-item>Two</lightning-menu-item>
+          <lightning-menu-item>Three</lightning-menu-item>
+          <lightning-menu-item>Four</lightning-menu-item>
+        </lightning-dropdown-list>
       </div>
 
       <div>
-        <h2>Plain Dropdown List</h2>
+        <h2>PlainDropdownList</h2>
         <elix-dropdown-list>
           <div>One</div>
           <div>Two</div>
@@ -206,7 +220,7 @@
       </div>
 
       <div>
-        <h2>Lightning Carousel</h2>
+        <h2>LightningCarousel</h2>
         <lightning-carousel>
           <!-- TODO: Replace fake card with real card component -->
           <div class="card">
@@ -234,7 +248,7 @@
       </div>
 
       <div>
-        <h2>Plain Carousel</h2>
+        <h2>PlainCarousel</h2>
         <elix-carousel arrow-button-overlap="false" proxy-list-overlap="false">
           <img class="elixImage" src="public/images/elix-image-01.jpg" />
           <img class="elixImage" src="public/images/elix-image-02.jpg" />
@@ -243,7 +257,7 @@
       </div>
 
       <div>
-        <h2>Lightning Carousel Slideshow</h2>
+        <h2>LightningCarouselSlideshow</h2>
         <lightning-carousel-slideshow>
           <div class="card">
             <img class="cardImage" src="public/images/carousel-01.jpg" />
@@ -270,7 +284,7 @@
       </div>
 
       <div>
-        <h2>Plain Carousel Slideshow</h2>
+        <h2>PlainCarouselSlideshow</h2>
         <elix-carousel-slideshow
           arrow-button-overlap="false"
           proxy-list-overlap="false"

@@ -4,12 +4,12 @@ import html from "elix/src/core/html.js";
 import * as template from "elix/src/core/template.js";
 
 /**
- * SDS overlay frame.
+ * Lightning overlay frame.
  *
  * In SDS, this isn't offered as a standalone component, but doing so here means that
  * we can easily add the SDS overlay style to anything with a popup.
  */
-export default class SDSOverlayFrame extends OverlayFrame {
+export default class LightningOverlayFrame extends OverlayFrame {
   get [internal.template]() {
     const result = super[internal.template];
     /**
@@ -27,7 +27,7 @@ export default class SDSOverlayFrame extends OverlayFrame {
       html`
         <style>
           @import url("src/sds/common.css");
-          @import url("src/sds/SDSOverlayFrame.css");
+          @import url("src/lightning/LightningOverlayFrame.css");
         </style>
       `
     );
@@ -35,4 +35,4 @@ export default class SDSOverlayFrame extends OverlayFrame {
   }
 }
 
-customElements.define("sds-overlay-frame", SDSOverlayFrame);
+customElements.define("lightning-overlay-frame", LightningOverlayFrame);

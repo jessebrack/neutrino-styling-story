@@ -1,30 +1,29 @@
 import * as internal from "elix/src/base/internal.js";
 import MenuButton from "elix/src/base/MenuButton.js";
-import SDSButtonIcon from "./SDSButtonIcon.js";
-import SDSMenu from "./SDSMenu.js";
-import SDSPopup from "./SDSPopup.js";
+import LightningButtonIcon from "./LightningButtonIcon.js";
+import LightningMenu from "./LightningMenu.js";
+import LightningPopup from "./LightningPopup.js";
 
 // HACK: Force rollup to include components we depend upon.
-if (SDSButtonIcon) {
+if (LightningButtonIcon) {
 }
-if (SDSMenu) {
+if (LightningMenu) {
 }
-if (SDSPopup) {
+if (LightningPopup) {
 }
 
 /**
- * SDS button menu.
+ * Lightning button menu.
  *
- * Note: SDS calls this a "button menu"; Elix calls this a "menu button".
+ * Note: Lightning calls this a "button menu"; Elix calls this a "menu button".
  * They're the same thing.
  */
-export default class SDSButtonMenu extends MenuButton {
+export default class LightningButtonMenu extends MenuButton {
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
-      menuPartType: SDSMenu,
-      popupPartType: SDSPopup,
-      // popupTogglePartType: null,
-      sourcePartType: SDSButtonIcon,
+      menuPartType: LightningMenu,
+      popupPartType: LightningPopup,
+      sourcePartType: LightningButtonIcon,
       symbol: "chevrondown",
       variant: "neutral",
     });
@@ -80,4 +79,4 @@ export default class SDSButtonMenu extends MenuButton {
   }
 }
 
-customElements.define("sds-button-menu", SDSButtonMenu);
+customElements.define("lightning-button-menu", LightningButtonMenu);

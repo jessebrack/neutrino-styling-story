@@ -3,9 +3,9 @@ import Menu from "elix/src/base/Menu.js";
 import html from "elix/src/core/html.js";
 
 /**
- * SDS Menu
+ * Lightning Menu
  */
-export default class SDSMenu extends Menu {
+export default class LightningMenu extends Menu {
   get [internal.template]() {
     const result = super[internal.template];
     const wrapper = result.content.getElementById("content");
@@ -23,4 +23,4 @@ export default class SDSMenu extends Menu {
   }
 }
 
-customElements.define("sds-menu", SDSMenu);
+customElements.define("lightning-menu", LightningMenu);

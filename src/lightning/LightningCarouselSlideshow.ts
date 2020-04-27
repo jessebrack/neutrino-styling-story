@@ -4,11 +4,11 @@ import * as internal from "elix/src/base/internal.js";
 import SlidingStage from "elix/src/base/SlidingStage.js";
 import { forwardFocus } from "elix/src/core/dom.js";
 import html from "elix/src/core/html.js";
-import SDSButtonIcon from "../sds/SDSButtonIcon";
+import LightningButtonIcon from "./LightningButtonIcon";
 import LightningPageDot from "./LightningPageDot";
 
 // HACK: Force rollup to include components we depend upon.
-if (SDSButtonIcon) {
+if (LightningButtonIcon) {
 }
 
 /**
@@ -86,12 +86,12 @@ export default class LightningCarouselSlideshow extends CarouselSlideshow {
     );
     if (explorerContainer) {
       explorerContainer.append(html`
-        <sds-button-icon
+        <lightning-button-icon
           id="playButton"
           part="play-button"
           size="x-small"
           variant="neutral"
-        ></sds-button-icon>
+        ></lightning-button-icon>
       `);
     }
 

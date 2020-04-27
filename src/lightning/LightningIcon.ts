@@ -1,10 +1,10 @@
 import * as internal from "elix/src/base/internal.js";
 import ReactiveElement from "elix/src/core/ReactiveElement.js";
 import * as template from "elix/src/core/template.js";
-import { applyPrefixedCssClass } from "./utilities";
+import { applyPrefixedCssClass } from "../utilities";
 
 /**
- * SDSIcon represents common User Interface iconography. The Icons comes in 5 sets:
+ * LightningIcon represents common User Interface iconography. The Icons comes in 5 sets:
  *
  *  - Utility: No Background, common user interface iconography [In PoC]
  *  - Action: Represent actions a user can take on any given screen.
@@ -19,7 +19,7 @@ import { applyPrefixedCssClass } from "./utilities";
  * @param {string} symbol Points to name of ID in sprite sheet.
  * @param {string} variant Sets color variant on SVG icon.
  */
-export default class SDSIcon extends ReactiveElement {
+export default class LightningIcon extends ReactiveElement {
   /**
    * Sets dimensions of bounding container holding the SVG.
    *
@@ -97,7 +97,7 @@ export default class SDSIcon extends ReactiveElement {
      * Icons can have their color modified by overriding the CSS custom
      * property, --lwc-c-icon-color inside of :host.
      *
-     * SDS provide three color variants for user feedback states such as
+     * Lightning provide three color variants for user feedback states such as
      * success, warning, and error. SDS also provides a muted color variant
      * where an icon doesn't required as much emphasis.
      */
@@ -148,7 +148,7 @@ export default class SDSIcon extends ReactiveElement {
     return template.html`
       <style>
         @import url("src/sds/common.css");
-        @import url("src/sds/SDSIcon.css");
+        @import url("src/lightning/LightningIcon.css");
       </style>
       <span id="boundary" class="lwc-icon-boundary" part="icon-source">
 				<span id="icon" class="lwc-icon">
@@ -171,4 +171,4 @@ export default class SDSIcon extends ReactiveElement {
   }
 }
 
-customElements.define("sds-icon", SDSIcon);
+customElements.define("lightning-icon", LightningIcon);

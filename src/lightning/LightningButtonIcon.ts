@@ -1,17 +1,17 @@
 import Button from "elix/src/base/Button.js";
 import * as internal from "elix/src/base/internal.js";
 import html from "elix/src/core/html.js";
-import SDSIcon from "./SDSIcon";
-import { applyPrefixedCssClass } from "./utilities";
+import { applyPrefixedCssClass } from "../utilities";
+import LightningIcon from "./LightningIcon";
 
 // HACK: Force rollup to include components we depend upon.
-if (SDSIcon) {
+if (LightningIcon) {
 }
 
 /**
- * SDS button with an icon
+ * Lightning button with an icon
  */
-export default class SDSButtonIcon extends Button {
+export default class LightningButtonIcon extends Button {
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
       variant: "bare",
@@ -87,13 +87,13 @@ export default class SDSButtonIcon extends Button {
 
     // Seal off the default slot with an icon.
     const slot = result.content.querySelector("slot:not([name])");
-    slot.replaceWith(html`<sds-icon id="icon"></sds-icon>`);
+    slot.replaceWith(html`<lightning-icon id="icon"></lightning-icon>`);
 
     result.content.append(
       html`
         <style>
           @import url("src/sds/common.css");
-          @import url("src/sds/SDSButtonIcon.css");
+          @import url("src/lightning/LightningButtonIcon.css");
         </style>
       `
     );
@@ -114,4 +114,4 @@ export default class SDSButtonIcon extends Button {
   }
 }
 
-customElements.define("sds-button-icon", SDSButtonIcon);
+customElements.define("lightning-button-icon", LightningButtonIcon);
