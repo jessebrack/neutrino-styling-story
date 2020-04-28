@@ -53,12 +53,18 @@ body {
 
 #componentGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
 }
 
 #componentGrid > * {
   box-sizing: border-box;
   padding: 0.5rem;
+}
+
+body:not(.lightning) .lightning {
+  display: none;
+}
+body:not(.plain) .plain {
+  display: none;
 }
 
 h1 {
