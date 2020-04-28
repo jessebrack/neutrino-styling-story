@@ -19,15 +19,6 @@ if (LightningButtonIcon) {
  * unnecessarily complicates the base lightning-carousel component.
  */
 export default class LightningCarouselSlideshow extends CarouselSlideshow {
-  [internal.componentDidMount]() {
-    super[internal.componentDidMount]();
-    this[internal.ids].playButton.addEventListener("click", () => {
-      this[internal.raiseChangeEvents] = true;
-      this.playing = !this.playing;
-      this[internal.raiseChangeEvents] = false;
-    });
-  }
-
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
       proxyListOverlap: false,
@@ -60,8 +51,14 @@ export default class LightningCarouselSlideshow extends CarouselSlideshow {
     super[internal.render](changed);
 
     if (this[internal.firstRender]) {
-      // Keep focus on the carousel, not the play/pause button.
       const playButton = this[internal.ids].playButton;
+      playButton.addEventListener("click", () => {
+        this[internal.raiseChangeEvents] = true;
+        this.playing = !this.playing;
+        this[internal.raiseChangeEvents] = false;
+      });
+
+      // Keep focus on the carousel, not the play/pause button.
       if (playButton instanceof HTMLElement) {
         forwardFocus(playButton, this);
       }
