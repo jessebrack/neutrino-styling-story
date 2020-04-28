@@ -1,9 +1,6 @@
 {
   "name": "neutrino",
   "version": "1.0.0",
-  "engines": {
-    "node": "^10.0.0"
-  },
   "dependencies": {
     "elix": "github:elix/elix#master"
   },
