@@ -60,11 +60,16 @@ body {
   padding: 0.5rem;
 }
 
-body:not(.lightning) .lightning {
+body:not(.show-lightning) .lightning {
   display: none;
 }
-body:not(.plain) .plain {
+body:not(.show-plain) .plain {
   display: none;
+}
+
+.lightning {
+  font-family: Salesforce Sans, Arial, sans-serif;
+  font-size: 0.8125rem;
 }
 
 h1 {

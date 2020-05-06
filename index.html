@@ -13,7 +13,7 @@
         for (let system of systems) {
           const checkbox = document.getElementById(system);
           const showSystem = checkbox.checked;
-          document.body.classList.toggle(system, showSystem);
+          document.body.classList.toggle(`show-${system}`, showSystem);
           if (showSystem) {
             columns++;
           }
