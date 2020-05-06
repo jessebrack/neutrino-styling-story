@@ -8,7 +8,7 @@
     <script src="dist/app.js" type="module"></script>
     <script type="module">
       window.showDesignSystems = function () {
-        const systems = ["lightning", "plain"];
+        const systems = ["lightning", "plain", "carbon"];
         let columns = 0;
         for (let system of systems) {
           const checkbox = document.getElementById(system);
@@ -30,12 +30,7 @@
     <div>
       Show:
       <label>
-        <input
-          id="lightning"
-          type="checkbox"
-          checked
-          onchange="showDesignSystems()"
-        />
+        <input id="lightning" type="checkbox" onchange="showDesignSystems()" />
         Lightning
       </label>
       <label>
@@ -47,10 +42,20 @@
         />
         Plain
       </label>
+      <label>
+        <input
+          id="carbon"
+          type="checkbox"
+          checked
+          onchange="showDesignSystems()"
+        />
+        Carbon
+      </label>
     </div>
     <div id="componentGrid">
       <h1 class="lightning">Lightning design system</h1>
       <h1 class="plain">Plain reference design system</h1>
+      <h1 class="carbon">Carbon design system</h1>
 
       <div class="lightning">
         <h2 class="componentName">LightningButton</h2>
@@ -69,6 +74,15 @@
       <div class="plain">
         <h2 class="componentName">PlainButton</h2>
         <elix-border-button>Button</elix-border-button>
+      </div>
+
+      <div class="carbon">
+        <h2 class="componentName">CarbonButton</h2>
+        <carbon-button variant="primary">Primary</carbon-button>
+        <carbon-button variant="secondary">Secondary</carbon-button>
+        <carbon-button variant="tertiary">Tertiary</carbon-button>
+        <carbon-button variant="danger">Danger</carbon-button>
+        <carbon-button variant="ghost">Ghost</carbon-button>
       </div>
 
       <div class="lightning">
@@ -96,6 +110,11 @@
         <!-- Not in Plain -->
       </div>
 
+      <div>
+        <h2 class="carbon"></h2>
+        <!-- Not in Carbon -->
+      </div>
+
       <div class="lightning">
         <h2 class="componentName">LightningButtonMenu</h2>
         <lightning-button-menu variant="neutral">
@@ -114,6 +133,11 @@
           <elix-menu-item>Three</elix-menu-item>
           <elix-menu-item>Four</elix-menu-item>
         </elix-menu-button>
+      </div>
+
+      <div>
+        <h2 class="carbon"></h2>
+        <!-- Not in Carbon -->
       </div>
 
       <div class="lightning">
@@ -151,6 +175,11 @@
           <img class="elixImage" src="public/images/elix-image-02.jpg" />
           <img class="elixImage" src="public/images/elix-image-03.jpg" />
         </elix-carousel>
+      </div>
+
+      <div>
+        <h2 class="carbon"></h2>
+        <!-- Not in Carbon -->
       </div>
 
       <div class="lightning">
@@ -192,6 +221,11 @@
         </elix-carousel-slideshow>
       </div>
 
+      <div>
+        <h2 class="carbon"></h2>
+        <!-- Not in Carbon -->
+      </div>
+
       <div class="lightning">
         <h2 class="componentName">LightningDropdownList</h2>
         <lightning-dropdown-list variant="neutral">
@@ -210,6 +244,11 @@
           <div>Three</div>
           <div>Four</div>
         </elix-dropdown-list>
+      </div>
+
+      <div>
+        <h2 class="carbon"></h2>
+        <!-- Not in Carbon -->
       </div>
 
       <div class="lightning">
@@ -231,6 +270,11 @@
       <div>
         <h2 class="plain"></h2>
         <!-- Not in Plain -->
+      </div>
+
+      <div>
+        <h2 class="carbon"></h2>
+        <!-- Not in Carbon -->
       </div>
 
       <div class="lightning">
@@ -255,6 +299,11 @@
         </elix-list-box>
       </div>
 
+      <div>
+        <h2 class="carbon"></h2>
+        <!-- Not in Carbon -->
+      </div>
+
       <div class="lightning">
         <h2 class="componentName">LightningMenu</h2>
         <lightning-menu variant="neutral">
@@ -275,6 +324,11 @@
         </elix-menu>
       </div>
 
+      <div>
+        <h2 class="carbon"></h2>
+        <!-- Not in Carbon -->
+      </div>
+
       <div class="lightning">
         <h2 class="componentName">LightningOverlayFrame</h2>
         <lightning-overlay-frame>
@@ -287,6 +341,11 @@
         <elix-overlay-frame>
           <div class="placeholder"></div>
         </elix-overlay-frame>
+      </div>
+
+      <div>
+        <h2 class="carbon"></h2>
+        <!-- Not in Carbon -->
       </div>
     </div>
   </body>

@@ -2,6 +2,7 @@
   "name": "neutrino",
   "version": "1.0.0",
   "dependencies": {
+    "carbon-components": "^10.11.2",
     "elix": "github:elix/elix#master"
   },
   "devDependencies": {
