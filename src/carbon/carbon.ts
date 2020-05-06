@@ -1,3 +1,4 @@
 import CarbonButton from "./CarbonButton";
+import CarbonOverlayFrame from "./CarbonOverlayFrame";
 
-export { CarbonButton };
+export { CarbonButton, CarbonOverlayFrame };

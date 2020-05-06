@@ -30,7 +30,12 @@
     <div>
       Show:
       <label>
-        <input id="lightning" type="checkbox" onchange="showDesignSystems()" />
+        <input
+          id="lightning"
+          type="checkbox"
+          checked
+          onchange="showDesignSystems()"
+        />
         Lightning
       </label>
       <label>
@@ -59,14 +64,16 @@
 
       <div class="lightning">
         <h2 class="componentName">LightningButton</h2>
-        <lightning-button variant="neutral">Button</lightning-button>
-        <lightning-button variant="neutral" disabled>Button</lightning-button>
-        <lightning-button variant="brand">Button</lightning-button>
-        <lightning-button variant="brand" disabled>Button</lightning-button>
-        <lightning-button variant="brand-outline">Button</lightning-button>
-        <lightning-button variant="destructive">Button</lightning-button>
-        <lightning-button variant="destructive-text">Button</lightning-button>
-        <lightning-button variant="success">Button</lightning-button>
+        <lightning-button variant="neutral">Neutral</lightning-button>
+        <lightning-button variant="neutral" disabled>Neutral</lightning-button>
+        <lightning-button variant="brand">Brand</lightning-button>
+        <lightning-button variant="brand" disabled>Brand</lightning-button>
+        <lightning-button variant="brand-outline">Brand</lightning-button>
+        <lightning-button variant="destructive">Destructive</lightning-button>
+        <lightning-button variant="destructive-text"
+          >Destructive</lightning-button
+        >
+        <lightning-button variant="success">Success</lightning-button>
         <lightning-button>Text Button</lightning-button>
         <lightning-button disabled>Text Button</lightning-button>
       </div>
@@ -345,7 +352,9 @@
 
       <div>
         <h2 class="carbon"></h2>
-        <!-- Not in Carbon -->
+        <carbon-overlay-frame>
+          <div class="placeholder"></div>
+        </carbon-overlay-frame>
       </div>
     </div>
   </body>
