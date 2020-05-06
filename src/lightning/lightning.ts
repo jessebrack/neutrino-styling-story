@@ -5,6 +5,7 @@ import LightningCarousel from "./LightningCarousel";
 import LightningCarouselSlideshow from "./LightningCarouselSlideshow";
 import LightningDropdownList from "./LightningDropdownList";
 import LightningIcon from "./LightningIcon";
+import LightningListBox from "./LightningListBox";
 import LightningMenu from "./LightningMenu";
 import LightningMenuItem from "./LightningMenuItem";
 import LightningOverlayFrame from "./LightningOverlayFrame";
@@ -20,6 +21,7 @@ export {
   LightningCarouselSlideshow,
   LightningDropdownList,
   LightningIcon,
+  LightningListBox,
   LightningMenu,
   LightningMenuItem,
   LightningOverlayFrame,

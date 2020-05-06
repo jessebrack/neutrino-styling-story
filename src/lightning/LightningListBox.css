@@ -1,0 +1,20 @@
+/* HACK: Needs real styles */
+
+:host {
+  border: 1px solid #dddbda;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0;
+  width: 15rem;
+  height: 15rem;
+  background-color: #fff;
+  overflow: auto;
+}
+
+::slotted(*) {
+  padding: 0.5rem 0.75rem;
+}
+
+::slotted([aria-selected="true"]) {
+  background-color: #0070d2;
+  color: #fff;
+}
