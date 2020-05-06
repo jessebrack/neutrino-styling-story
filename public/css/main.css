@@ -67,7 +67,7 @@ body:not(.show-plain) .plain {
   display: none;
 }
 
-.lightning {
+.lightning :not(.componentName) {
   font-family: Salesforce Sans, Arial, sans-serif;
   font-size: 0.8125rem;
 }
