@@ -9,7 +9,7 @@ export default function CarbonStyleMixin(Base: Constructor<HTMLElement>) {
       result.content.append(
         html`
           <style>
-            @import url("node_modules/carbon-components/css/carbon-components.min.css");
+            @import url("public/css/carbon-components.min.css");
           </style>
         `
       );
