@@ -1,5 +1,6 @@
 import Button from "elix/src/base/Button.js";
 import * as internal from "elix/src/base/internal.js";
+import html from "elix/src/core/html.js";
 import CarbonStyleMixin from "./CarbonStyleMixin";
 
 /**
@@ -21,6 +22,23 @@ export default class CarbonDropdownSource extends CarbonStyleMixin(Button) {
     if (inner) {
       inner.classList.add("bx--dropdown-text");
     }
+
+    result.content.append(html`
+      <style>
+        :host {
+          display: inline-block;
+        }
+
+        [part~="inner"] {
+          display: inline-flex;
+        }
+
+        /* Don't want Carbon right padding. */
+        .bx--dropdown-text {
+          padding: 0 1rem;
+        }
+      </style>
+    `);
 
     return result;
   }

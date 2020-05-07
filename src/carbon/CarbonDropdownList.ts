@@ -2,12 +2,16 @@ import DropdownList from "elix/src/base/DropdownList.js";
 import * as internal from "elix/src/base/internal.js";
 import html from "elix/src/core/html.js";
 import CarbonDropdownSource from "./CarbonDropdownSource";
+import CarbonOpenCloseToggle from "./CarbonOpenCloseToggle";
 import CarbonPopup from "./CarbonPopup";
-// import DropdownSource, { dropdownArrow } from "./dropdownSource/index.js";
 import CarbonStyleMixin from "./CarbonStyleMixin";
 
 // HACK: Force rollup to include components we depend upon.
 if (CarbonDropdownSource) {
+}
+if (CarbonOpenCloseToggle) {
+}
+if (CarbonPopup) {
 }
 
 /**
@@ -17,9 +21,9 @@ export default class CarbonDropdownList extends CarbonStyleMixin(DropdownList) {
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
       popupPartType: CarbonPopup,
-      // popupTogglePartType: dropdownArrow,
+      popupTogglePartType: CarbonOpenCloseToggle,
       sourcePartType: CarbonDropdownSource,
-      valuePartType: "span",
+      // valuePartType: "span",
     });
   }
 
@@ -37,6 +41,21 @@ export default class CarbonDropdownList extends CarbonStyleMixin(DropdownList) {
       this.classList.toggle("bx--list-box--expanded", opened);
     }
 
+    // Tell the toggle which direction it should point to based on whether
+    // dropdown is currently open.
+    if (
+      changed.opened ||
+      changed.popupPosition ||
+      changed.popupTogglePartType
+    ) {
+      const { opened } = this[internal.state];
+      const direction = !opened ? "down" : "up";
+      /** @type {any} */ const popupToggle = this[internal.ids].popupToggle;
+      if ("direction" in popupToggle) {
+        popupToggle.direction = direction;
+      }
+    }
+
     if (changed.valuePartType) {
       this[internal.ids].value.classList.add("bx--list-box__label");
     }
@@ -47,6 +66,10 @@ export default class CarbonDropdownList extends CarbonStyleMixin(DropdownList) {
 
     result.content.append(html`
       <style>
+        :host {
+          display: inline-block;
+        }
+
         /* Use host styling instead of class styling so we can style from inside */
 
         /* .bx--list-box { */
@@ -92,23 +115,23 @@ export default class CarbonDropdownList extends CarbonStyleMixin(DropdownList) {
           transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
         }
 
-        [part="value"] {
-          color: currentColor;
+        /* Don't want Carbon padding. */
+        .bx--list-box__field {
+          padding: 0;
+        }
+
+        /* Hack in Carbon focus styling */
+        :host([focus-visible]:focus-within) {
+          outline: 2px solid var(--cds-focus, #0f62fe);
+          outline-offset: -2px;
+        }
+
+        [part~="value"] {
           flex: 1;
-        }
-
-        :host([aria-expanded="true"]) [part="popup-toggle"] svg {
-          transform: rotate(-180deg);
-        }
-
-        :host([aria-expanded="true"]) {
-          --bx-dropdown-position: relative;
-          --bx-dropdown-height: 15rem;
-          --bx-dropdown-transition: max-height 110ms
-            cubic-bezier(0, 0, 0.38, 0.9);
         }
       </style>
     `);
+
     return result;
   }
 
