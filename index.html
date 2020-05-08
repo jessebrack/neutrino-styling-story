@@ -30,11 +30,21 @@
     <div>
       Show:
       <label>
-        <input id="lightning" type="checkbox" onchange="showDesignSystems()" />
+        <input
+          id="lightning"
+          type="checkbox"
+          checked
+          onchange="showDesignSystems()"
+        />
         Lightning
       </label>
       <label>
-        <input id="plain" type="checkbox" onchange="showDesignSystems()" />
+        <input
+          id="plain"
+          type="checkbox"
+          checked
+          onchange="showDesignSystems()"
+        />
         Plain
       </label>
       <label>
@@ -246,10 +256,10 @@
       <div class="carbon">
         <h2 class="componentName">CarbonDropdownList</h2>
         <carbon-dropdown-list>
-          <div>One</div>
-          <div>Two</div>
-          <div>Three</div>
-          <div>Four</div>
+          <carbon-menu-item>One</carbon-menu-item>
+          <carbon-menu-item>Two</carbon-menu-item>
+          <carbon-menu-item>Three</carbon-menu-item>
+          <carbon-menu-item>Four</carbon-menu-item>
         </carbon-dropdown-list>
       </div>
 
@@ -327,8 +337,13 @@
       </div>
 
       <div class="carbon">
-        <h2 class="componentName"></h2>
-        <!-- Not in Carbon -->
+        <h2 class="componentName">CarbonMenu</h2>
+        <carbon-menu>
+          <carbon-menu-item>One</carbon-menu-item>
+          <carbon-menu-item>Two</carbon-menu-item>
+          <carbon-menu-item>Three</carbon-menu-item>
+          <carbon-menu-item>Four</carbon-menu-item>
+        </carbon-menu>
       </div>
 
       <div class="lightning">

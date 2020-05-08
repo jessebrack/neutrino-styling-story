@@ -2,6 +2,7 @@ import DropdownList from "elix/src/base/DropdownList.js";
 import * as internal from "elix/src/base/internal.js";
 import html from "elix/src/core/html.js";
 import CarbonDropdownSource from "./CarbonDropdownSource";
+import CarbonMenu from "./CarbonMenu";
 import CarbonOpenCloseToggle from "./CarbonOpenCloseToggle";
 import CarbonPopup from "./CarbonPopup";
 import CarbonStyleMixin from "./CarbonStyleMixin";
@@ -20,10 +21,11 @@ if (CarbonPopup) {
 export default class CarbonDropdownList extends CarbonStyleMixin(DropdownList) {
   get [internal.defaultState]() {
     return Object.assign(super[internal.defaultState], {
+      horizontalAlign: "stretch",
+      menuPartType: CarbonMenu,
       popupPartType: CarbonPopup,
       popupTogglePartType: CarbonOpenCloseToggle,
       sourcePartType: CarbonDropdownSource,
-      // valuePartType: "span",
     });
   }
 
@@ -39,6 +41,9 @@ export default class CarbonDropdownList extends CarbonStyleMixin(DropdownList) {
       const { opened } = this[internal.state];
       this.classList.toggle("bx--dropdown--open", opened);
       this.classList.toggle("bx--list-box--expanded", opened);
+
+      // HACK: This should get moved to Elix PopupSource
+      this.toggleAttribute("opened", opened);
     }
 
     // Tell the toggle which direction it should point to based on whether
@@ -81,7 +86,7 @@ export default class CarbonDropdownList extends CarbonStyleMixin(DropdownList) {
           font-family: inherit;
           vertical-align: initial;
           position: relative;
-          width: 100%;
+          /* width: 100%; */
           height: 2.5rem;
           max-height: 2.5rem;
           background-color: var(--cds-field-01, #f4f4f4);
@@ -103,11 +108,11 @@ export default class CarbonDropdownList extends CarbonStyleMixin(DropdownList) {
           outline-offset: -2px;
           position: relative;
           list-style: none;
-          display: block;
+          /* display: block; */
           background-color: var(--cds-field-01, #f4f4f4);
           border: none;
           border-bottom: 1px solid var(--cds-ui-04, #8d8d8d);
-          width: 100%;
+          /* width: 100%; */
           height: 2.5rem;
           cursor: pointer;
           color: var(--cds-text-01, #161616);
@@ -128,18 +133,21 @@ export default class CarbonDropdownList extends CarbonStyleMixin(DropdownList) {
 
         [part~="value"] {
           flex: 1;
+          margin-right: 2em;
+        }
+
+        [part~="menu"] {
+          /* max-height: 0; */
+          /* transition: max-height 0.11s cubic-bezier(0.2, 0, 0.38, 0.9); */
+        }
+
+        :host([opened]) [part~="menu"] {
+          /* max-height: 8.75rem; */
         }
       </style>
     `);
 
     return result;
-  }
-
-  get variant() {
-    return this[internal.state].variant;
-  }
-  set variant(variant) {
-    this[internal.setState]({ variant });
   }
 }
 
