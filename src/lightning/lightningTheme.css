@@ -1,0 +1,25 @@
+/* For demo purposes, the themeProvider is scoped to the :host provided by <sds-theme-provider> */
+
+:host {
+    /* ================
+        LEX Styling API
+    ================= */
+
+    /* Private */
+    --slds-brand-accessible: #0070d2;
+    --slds-brand-accessible-active: #005fb2;
+    --slds-font-size: 0.825rem;
+
+    /* Globals */
+    --lwc-font-family: 'Salesforce Sans', Arial, sans-serif;
+
+    --sds-g-font-size: var(--slds-g-font-size, var(--slds-font-size));
+    --sds-g-brand-accessible: var(
+        --slds-g-brand-accessible,
+        var(--slds-brand-accessible)
+    );
+    --sds-g-brand-accessible-active: var(
+        --slds-g-brand-accessible-active,
+        var(--slds-brand-accessible-active)
+    );
+}

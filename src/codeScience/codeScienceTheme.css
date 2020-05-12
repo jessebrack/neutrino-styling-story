@@ -1,0 +1,19 @@
+/* For demo purposes, the themeProvider is scoped to the :host provided by <sds-theme-provider> */
+
+:host {
+    /* ================
+  CodeScience Styling API
+  ================= */
+
+    /* Public */
+
+    /* CodeScience API */
+
+    /* Private */
+
+    --cs-brand-accessible: #9df0d9;
+
+    /* SDS API */
+
+    --sds-g-brand-accessible: var(--cs-brand-accessible);
+}

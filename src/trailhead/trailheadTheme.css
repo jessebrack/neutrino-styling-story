@@ -1,0 +1,17 @@
+/* For demo purposes, the themeProvider is scoped to the :host provided by <sds-theme-provider> */
+
+:host {
+    /* ================
+    Trailhead Styling API
+    ================= */
+
+    /* Public */
+
+    /* Trailhead API */
+
+    /* Private */
+
+    /* WWW API */
+
+    --www-g-brand-accessible: #fb610e;
+}

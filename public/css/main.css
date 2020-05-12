@@ -1,33 +1,33 @@
 @font-face {
-  font-display: fallback;
-  font-family: "Salesforce Sans";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/SalesforceSans-Regular.ttf");
+    font-display: fallback;
+    font-family: 'Salesforce Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/SalesforceSans-Regular.ttf');
 }
 
 @font-face {
-  font-display: fallback;
-  font-family: "Salesforce Sans";
-  font-style: bold;
-  font-weight: 700;
-  src: url("../fonts/SalesforceSans-Bold.ttf");
+    font-display: fallback;
+    font-family: 'Salesforce Sans';
+    font-style: bold;
+    font-weight: 700;
+    src: url('../fonts/SalesforceSans-Bold.ttf');
 }
 
 @font-face {
-  font-display: fallback;
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/OpenSans-Regular.ttf");
+    font-display: fallback;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/OpenSans-Regular.ttf');
 }
 
 @font-face {
-  font-display: fallback;
-  font-family: "Open Sans";
-  font-style: bold;
-  font-weight: 700;
-  src: url("../fonts/OpenSans-Bold.ttf");
+    font-display: fallback;
+    font-family: 'Open Sans';
+    font-style: bold;
+    font-weight: 700;
+    src: url('../fonts/OpenSans-Bold.ttf');
 }
 
 @font-face {
@@ -94,31 +94,31 @@
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html,
 body {
-  margin: 0;
+    margin: 0;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont;
-  padding: 2rem;
-  -webkit-tap-highlight-color: transparent;
+    background-color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont;
+    -webkit-tap-highlight-color: transparent;
 }
 
 :not(:defined) {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 #componentGrid {
-  display: grid;
+    display: grid;
 }
 
 #componentGrid > * {
-  box-sizing: border-box;
-  padding: 0.5rem;
+    box-sizing: border-box;
+    padding: 0.5rem;
 }
 
 body:not(.show-lightning) .lightning {
@@ -143,53 +143,356 @@ body:not(.show-carbon) .carbon {
 }
 
 h1 {
-  background: white;
-  padding-bottom: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-h2 {
-  border-top: 1px solid lightgray;
-  padding-top: 1rem;
+    background: white;
+    padding-bottom: 1rem;
+    /*
+    position: sticky;
+    top: 0;
+    */
+    z-index: 1;
 }
 
 .placeholder {
-  height: 100px;
-  width: 100px;
+    height: 100px;
+    width: 100px;
 }
 
 /* TODO: Remove card styles once carousels use real card components */
 .card {
-  border-radius: 0.25rem;
-  border: 1px solid #dddbda;
-  box-sizing: border-box;
+    border-radius: 0.25rem;
+    border: 1px solid #dddbda;
+    box-sizing: border-box;
 }
 
 .cardDetails {
-  background: #fff;
-  box-sizing: border-box;
-  height: 6.625rem;
-  padding: 0.75rem;
-  text-align: center;
+    background: #fff;
+    box-sizing: border-box;
+    height: 6.625rem;
+    padding: 0.75rem;
+    text-align: center;
 }
 
 .cardImage {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
 
 .cardTitle {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
 }
 
 .elixImage {
-  display: inline-block;
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  vertical-align: middle;
+    display: inline-block;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+
+sds-button {
+    margin-bottom: 0.25em;
+}
+
+body {
+    font-family: 'Salesforce Sans';
+    /* background-image: url('../../src/assets/images/demo-only-brand.png');
+    background-position: bottom right;
+    background-repeat: no-repeat; */
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1 {
+    /*
+background: white;
+position: sticky;
+top: 0;
+z-index: 1;
+*/
+    margin: 0 0 2.5rem;
+    padding: 0;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin-top: 0;
+    font-weight: normal;
+}
+
+h3,
+h4 {
+    margin: 0 0 1rem;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+h4 {
+    font-size: 0.75rem;
+}
+
+.placeholder {
+    height: 100px;
+    width: 100px;
+}
+
+.elixImage {
+    display: inline-block;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.neo-container {
+    display: grid;
+    grid-template-columns: [sidebar-start] 0.5fr [content];
+    align-items: stretch;
+    grid-gap: 20px;
+}
+
+.neo-header {
+    grid-column: sidebar-start;
+    padding: 1.5rem;
+    padding-left: 0;
+}
+
+.neo-header p {
+    font-size: 0.825rem;
+    color: #666;
+    align-self: center;
+    margin-bottom: 0;
+}
+
+.neo-item {
+    padding: 1.5rem;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 8px 8px 18px #e8e9ee;
+    position: relative;
+    min-width: 250px;
+}
+
+.neo-item p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.neo-connector-out:before,
+.neo-connector-in:after {
+    content: '';
+    height: 14px;
+    border-left: 2px dotted #b0c4df;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    z-index: 99999;
+    margin-bottom: 3px;
+}
+
+.neo-connector-in:after {
+    display: block;
+    bottom: auto;
+    top: 100%;
+    margin-bottom: 0;
+    margin-top: 3px;
+}
+
+.neo-item_empty {
+    box-shadow: none;
+    border: 2px dotted #b0c4df;
+    text-align: center;
+    color: #7e9ec4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.neo-item_filled {
+    background-color: #fff;
+    text-align: center;
+    color: #7e9ec4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 175px;
+}
+
+.neo-item_empty:after {
+    margin-top: 5px;
+}
+
+.row-bwc {
+    grid-row: 6 / 7;
+}
+
+.row-ds {
+    grid-row: 5 / 6;
+}
+
+.row-js {
+    grid-row: 4 / 5;
+    align-self: auto;
+}
+
+.row-js h2,
+.row-js h3 {
+    margin: 0;
+}
+
+.row-exp {
+    grid-row: 3 / 4;
+}
+
+.row-exp-js {
+    grid-row: 3 / 5;
+}
+
+.row-product {
+    grid-row: 2 / 3;
+}
+
+.row-cat {
+    grid-row: 1 / 2;
+}
+
+.col-span-2 {
+    grid-column: span 2;
+}
+
+.col-span-3 {
+    grid-column: span 3;
+}
+
+.col-span-4 {
+    grid-column: span 4;
+}
+
+.col-span-5 {
+    grid-column: span 5;
+}
+
+.col-span-6 {
+    grid-column: span 6;
+}
+
+.col-span-7 {
+    grid-column: span 7;
+}
+
+.col-span-8 {
+    grid-column: span 8;
+}
+
+.col-span-9 {
+    grid-column: span 9;
+}
+
+.col-span-10 {
+    grid-column: span 10;
+}
+
+.col-span-11 {
+    grid-column: span 11;
+}
+
+.col-span-12 {
+    grid-column: span 12;
+}
+
+.neo-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.neo-content {
+    padding: 2.5rem;
+    padding-top: 3rem;
+}
+
+.neo-nav {
+    padding: 2.5rem;
+    box-shadow: 8px 8px 18px #e8e9ee;
+    min-height: 100vh;
+    display: none;
+}
+
+.neo-brand-name {
+    margin: 1rem 0 3rem;
+    padding-bottom: 2.75rem;
+    border-bottom: 1px dotted #aaa;
+    font-weight: bold;
+}
+
+.neo-nav-item {
+    color: #0070d2;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.85rem;
+    padding: 0.75rem 0;
+    letter-spacing: 0.085em;
+}
+
+.neo-nav-item-active {
+    background-color: #edf2f8;
+    color: #111;
+    margin: 0 -2.5rem;
+    padding-left: 2.5rem;
+}
+
+.neo-title {
+    background: url('../../src/assets/images/bg.png');
+    background-size: contain;
+    padding: 2.5rem;
+    color: #fff;
+    font-weight: bold;
+    margin: -3rem -2.5rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.neo-theme-toggle {
+    width: 72px;
+}
+
+.neo-has-sidebar .neo-nav {
+    display: block;
+}
+
+.neo-has-sidebar.neo-layout {
+    grid-template-columns: 1.5fr 10.5fr;
+}
+
+.neo-cat {
+    border-bottom: 1px dashed #b0c4df;
+    text-transform: uppercase;
+    color: #b0c4df;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.085em;
+    padding-bottom: 0.5rem;
+}
+
+.neo-cat-on-platform {
+    grid-column: 2 / 9;
+}
+
+.neo-cat-off-platform {
+    grid-column: 9 / 11;
 }

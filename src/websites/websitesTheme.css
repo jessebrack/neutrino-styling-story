@@ -1,0 +1,30 @@
+/* For demo purposes, the themeProvider is scoped to the :host provided by <sds-theme-provider> */
+
+:host {
+    /* ================
+    Website Styling API
+    ================= */
+
+    /* Public */
+
+    /* WWW API */
+
+    --www-brand-accessible: var(
+        --www-g-brand-accessible,
+        rgba(0, 136, 196, 0.9)
+    );
+    --www-brand-accessible-active: var(
+        --www-g-brand-accessible-active,
+        rgba(0, 97, 138, 0.9)
+    );
+
+    /* Private */
+
+    /* SDS API */
+
+    --sds-c-button-brand-shadow: 0 1px 0 #e2e2e2;
+    --sds-c-button-neutral-shadow: 0 1px 0 #e2e2e2;
+
+    --sds-g-brand-accessible: var(--www-brand-accessible);
+    --sds-g-brand-accessible-active: var(--www-brand-accessible-active);
+}

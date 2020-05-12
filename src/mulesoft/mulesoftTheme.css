@@ -1,0 +1,21 @@
+/* For demo purposes, the themeProvider is scoped to the :host provided by <sds-theme-provider> */
+
+:host {
+    /* ================
+  Trailhead Styling API
+  ================= */
+
+    /* Public */
+
+    /* Mulesoft API */
+
+    /* Private */
+
+    --mule-brand-accessible: #00a0df;
+    --mule-radius: 0;
+
+    /* SDS API */
+
+    --sds-g-brand-accessible: var(--mule-brand-accessible);
+    --sds-g-radius: var(--mule-radius);
+}
