@@ -11,7 +11,10 @@
 
     /* Private */
 
-    --cs-brand-accessible: #9df0d9;
+    --cs-brand-accessible: #ffd900;
+    --sds-c-button-brand-color-text: #053361;
+    --sds-c-button-color-text: #053361;
+    --sds-c-button-brand-outline-color-border: #053361;
 
     /* SDS API */
 

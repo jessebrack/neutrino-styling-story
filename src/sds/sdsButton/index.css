@@ -107,7 +107,7 @@
         white
     );
     --sds-c-button-color-border: var(
-        --sds-c-button-brand-color-border,
+        --sds-c-button-brand-outline-color-border,
         var(--sds-g-brand-accessible, #3e3e3c)
     );
     --sds-c-button-color-background-active: var(

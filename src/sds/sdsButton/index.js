@@ -39,9 +39,6 @@ export default class SdsButton extends Button {
                 <style>
                     @import url('src/sds/common.css');
                     @import url('src/sds/sdsButton/index.css');
-                    :host {
-                        --sds-c-button-color-background: pink;
-                    }
                 </style>
             `
         );

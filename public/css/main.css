@@ -31,64 +31,64 @@
 }
 
 @font-face {
-  font-family: "IBM Plex Mono";
-  font-style: italic;
-  font-weight: 300;
-  font-display: auto;
-  src: local("IBM Plex Mono Light Italic"), local("IBMPlexMono-LightItalic"),
-    url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6sfjptAgt5VM-kVkqdyU8n1ioSflV1gMoW.woff)
-      format("woff");
+    font-family: 'IBM Plex Mono';
+    font-style: italic;
+    font-weight: 300;
+    font-display: auto;
+    src: local('IBM Plex Mono Light Italic'), local('IBMPlexMono-LightItalic'),
+        url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6sfjptAgt5VM-kVkqdyU8n1ioSflV1gMoW.woff)
+            format('woff');
 }
 
 @font-face {
-  font-family: "IBM Plex Mono";
-  font-style: italic;
-  font-weight: 400;
-  font-display: auto;
-  src: local("IBM Plex Mono Italic"), local("IBMPlexMono-Italic"),
-    url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6pfjptAgt5VM-kVkqdyU8n1ioa1Xdm.woff)
-      format("woff");
+    font-family: 'IBM Plex Mono';
+    font-style: italic;
+    font-weight: 400;
+    font-display: auto;
+    src: local('IBM Plex Mono Italic'), local('IBMPlexMono-Italic'),
+        url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6pfjptAgt5VM-kVkqdyU8n1ioa1Xdm.woff)
+            format('woff');
 }
 
 @font-face {
-  font-family: "IBM Plex Mono";
-  font-style: italic;
-  font-weight: 600;
-  font-display: auto;
-  src: local("IBM Plex Mono SemiBold Italic"),
-    local("IBMPlexMono-SemiBoldItalic"),
-    url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6sfjptAgt5VM-kVkqdyU8n1ioSClN1gMoW.woff)
-      format("woff");
+    font-family: 'IBM Plex Mono';
+    font-style: italic;
+    font-weight: 600;
+    font-display: auto;
+    src: local('IBM Plex Mono SemiBold Italic'),
+        local('IBMPlexMono-SemiBoldItalic'),
+        url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6sfjptAgt5VM-kVkqdyU8n1ioSClN1gMoW.woff)
+            format('woff');
 }
 
 @font-face {
-  font-family: "IBM Plex Mono";
-  font-style: normal;
-  font-weight: 300;
-  font-display: auto;
-  src: local("IBM Plex Mono Light"), local("IBMPlexMono-Light"),
-    url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6qfjptAgt5VM-kVkqdyU8n3oQIwlBFhA.woff)
-      format("woff");
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 300;
+    font-display: auto;
+    src: local('IBM Plex Mono Light'), local('IBMPlexMono-Light'),
+        url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6qfjptAgt5VM-kVkqdyU8n3oQIwlBFhA.woff)
+            format('woff');
 }
 
 @font-face {
-  font-family: "IBM Plex Mono";
-  font-style: normal;
-  font-weight: 400;
-  font-display: auto;
-  src: local("IBM Plex Mono"), local("IBMPlexMono"),
-    url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F63fjptAgt5VM-kVkqdyU8n1i8q0Q.woff)
-      format("woff");
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: auto;
+    src: local('IBM Plex Mono'), local('IBMPlexMono'),
+        url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F63fjptAgt5VM-kVkqdyU8n1i8q0Q.woff)
+            format('woff');
 }
 
 @font-face {
-  font-family: "IBM Plex Mono";
-  font-style: normal;
-  font-weight: 600;
-  font-display: auto;
-  src: local("IBM Plex Mono SemiBold"), local("IBMPlexMono-SemiBold"),
-    url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6qfjptAgt5VM-kVkqdyU8n3vAOwlBFhA.woff)
-      format("woff");
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 600;
+    font-display: auto;
+    src: local('IBM Plex Mono SemiBold'), local('IBMPlexMono-SemiBold'),
+        url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6qfjptAgt5VM-kVkqdyU8n3vAOwlBFhA.woff)
+            format('woff');
 }
 
 *,
@@ -122,24 +122,24 @@ body {
 }
 
 body:not(.show-lightning) .lightning {
-  display: none;
+    display: none;
 }
 body:not(.show-plain) .plain {
-  display: none;
+    display: none;
 }
 body:not(.show-carbon) .carbon {
-  display: none;
+    display: none;
 }
 
 .lightning :not(.componentName) {
-  font-family: Salesforce Sans, Arial, sans-serif;
-  font-size: 0.8125rem;
+    font-family: Salesforce Sans, Arial, sans-serif;
+    font-size: 0.8125rem;
 }
 
 .carbon :not(.componentName) {
-  font-size: 1em;
-  line-height: 1.5;
-  font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
 h1 {
@@ -225,6 +225,7 @@ h2 {
     font-size: 1.25rem;
     margin-top: 0;
     font-weight: normal;
+    color: #466891;
 }
 
 h3,
@@ -236,6 +237,7 @@ h4 {
 h3 {
     font-size: 1rem;
     margin-bottom: 1.25rem;
+    color: #466891;
 }
 
 h4 {
@@ -270,7 +272,7 @@ h4 {
 
 .neo-header p {
     font-size: 0.825rem;
-    color: #666;
+    color: #7e9ec4;
     align-self: center;
     margin-bottom: 0;
 }
@@ -279,14 +281,18 @@ h4 {
     padding: 1.5rem;
     border-radius: 18px;
     background: #ffffff;
-    box-shadow: 8px 8px 18px #e8e9ee;
+    box-shadow: 4px 4px 12px #e8e9ee;
     position: relative;
     min-width: 250px;
 }
 
 .neo-item p {
-    margin-top: 0.5rem;
+    margin-top: 0;
     margin-bottom: 0.5rem;
+}
+
+.neo-item p:last-child {
+    margin-bottom: 0;
 }
 
 .neo-connector-out:before,
@@ -311,13 +317,18 @@ h4 {
 
 .neo-item_empty {
     box-shadow: none;
-    border: 2px dotted #b0c4df;
+    border: 2px dotted #ced3da;
     text-align: center;
     color: #7e9ec4;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    min-width: 125px;
+}
+
+.neo-item_empty:after {
+    margin-top: 5px;
 }
 
 .neo-item_filled {
@@ -331,8 +342,14 @@ h4 {
     min-width: 175px;
 }
 
-.neo-item_empty:after {
-    margin-top: 5px;
+.neo-item_meta {
+    display: block;
+    font-size: 0.625rem;
+    margin-top: 0.25rem;
+}
+
+.neo-item_meta:first-letter {
+    text-transform: capitalize;
 }
 
 .row-bwc {
@@ -490,9 +507,9 @@ h4 {
 }
 
 .neo-cat-on-platform {
-    grid-column: 2 / 9;
+    grid-column: 2 / 11;
 }
 
 .neo-cat-off-platform {
-    grid-column: 9 / 11;
+    grid-column: 11 / 13;
 }

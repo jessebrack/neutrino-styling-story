@@ -1,161 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Neutrino</title>
-    <link rel="stylesheet" href="public/css/main.css" />
-    <script src="dist/app.js" type="module"></script>
-    <script type="module">
-      window.showDesignSystems = function () {
-        const systems = ["lightning", "plain", "carbon"];
-        let columns = 0;
-        for (let system of systems) {
-          const checkbox = document.getElementById(system);
-          const showSystem = checkbox.checked;
-          document.body.classList.toggle(`show-${system}`, showSystem);
-          if (showSystem) {
-            columns++;
-          }
-        }
-        const componentGrid = document.getElementById("componentGrid");
-        componentGrid.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
-      };
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Neutrino</title>
+        <link rel="stylesheet" href="public/css/main.css" />
+        <script src="dist/app.js" type="module"></script>
+        <script type="module">
+            window.showDesignSystems = function () {
+                const systems = ['lightning', 'plain', 'carbon'];
+                let columns = 0;
+                for (let system of systems) {
+                    const checkbox = document.getElementById(system);
+                    const showSystem = checkbox.checked;
+                    document.body.classList.toggle(
+                        `show-${system}`,
+                        showSystem
+                    );
+                    if (showSystem) {
+                        columns++;
+                    }
+                }
+                const componentGrid = document.getElementById('componentGrid');
+                componentGrid.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+            };
 
-      window.addEventListener("load", () => showDesignSystems());
-    </script>
-  </head>
+            window.addEventListener('load', () => showDesignSystems());
+        </script>
+    </head>
 
-  <body>
-    <div>
-      Show:
-      <label>
-        <input
-          id="lightning"
-          type="checkbox"
-          checked
-          onchange="showDesignSystems()"
-        />
-        Lightning
-      </label>
-      <label>
-        <input
-          id="plain"
-          type="checkbox"
-          checked
-          onchange="showDesignSystems()"
-        />
-        Plain
-      </label>
-      <label>
-        <input
-          id="carbon"
-          type="checkbox"
-          checked
-          onchange="showDesignSystems()"
-        />
-        Carbon
-      </label>
-    </div>
-    <div id="componentGrid">
-      <h1 class="lightning">Lightning design system</h1>
-      <h1 class="plain">Plain reference system</h1>
-      <h1 class="carbon">Carbon design system</h1>
+    <body>
+        <div>
+            Show:
+            <label>
+                <input
+                    id="lightning"
+                    type="checkbox"
+                    checked
+                    onchange="showDesignSystems()"
+                />
+                Lightning
+            </label>
+            <label>
+                <input
+                    id="plain"
+                    type="checkbox"
+                    checked
+                    onchange="showDesignSystems()"
+                />
+                Plain
+            </label>
+            <label>
+                <input
+                    id="carbon"
+                    type="checkbox"
+                    checked
+                    onchange="showDesignSystems()"
+                />
+                Carbon
+            </label>
+        </div>
+        <div id="componentGrid">
+            <h1 class="lightning">Lightning design system</h1>
+            <h1 class="plain">Plain reference system</h1>
+            <h1 class="carbon">Carbon design system</h1>
 
-      <div class="lightning">
-        <h2 class="componentName">LightningButton</h2>
-        <lightning-button variant="neutral">Neutral</lightning-button>
-        <lightning-button variant="neutral" disabled>Neutral</lightning-button>
-        <lightning-button variant="brand">Brand</lightning-button>
-        <lightning-button variant="brand" disabled>Brand</lightning-button>
-        <lightning-button variant="brand-outline">Brand</lightning-button>
-        <lightning-button variant="destructive">Destructive</lightning-button>
-        <lightning-button variant="destructive-text"
-          >Destructive</lightning-button
-        >
-        <lightning-button variant="success">Success</lightning-button>
-        <lightning-button>Text Button</lightning-button>
-        <lightning-button disabled>Text Button</lightning-button>
-      </div>
+            <div class="lightning">
+                <h2 class="componentName">LightningButton</h2>
+                <lightning-button variant="neutral">Neutral</lightning-button>
+                <lightning-button variant="neutral" disabled
+                    >Neutral</lightning-button
+                >
+                <lightning-button variant="brand">Brand</lightning-button>
+                <lightning-button variant="brand" disabled
+                    >Brand</lightning-button
+                >
+                <lightning-button variant="brand-outline"
+                    >Brand</lightning-button
+                >
+                <lightning-button variant="destructive"
+                    >Destructive</lightning-button
+                >
+                <lightning-button variant="destructive-text"
+                    >Destructive</lightning-button
+                >
+                <lightning-button variant="success">Success</lightning-button>
+                <lightning-button>Text Button</lightning-button>
+                <lightning-button disabled>Text Button</lightning-button>
+            </div>
 
-      <div class="plain">
-        <h2 class="componentName">PlainButton</h2>
-        <elix-border-button>Button</elix-border-button>
-      </div>
+            <div class="plain">
+                <h2 class="componentName">PlainButton</h2>
+                <elix-border-button>Button</elix-border-button>
+            </div>
 
-      <div class="carbon">
-        <h2 class="componentName">CarbonButton</h2>
-        <carbon-button variant="primary">Primary</carbon-button>
-        <carbon-button variant="secondary">Secondary</carbon-button>
-        <carbon-button variant="tertiary">Tertiary</carbon-button>
-        <carbon-button variant="danger">Danger</carbon-button>
-        <carbon-button variant="ghost">Ghost</carbon-button>
-      </div>
+            <div class="carbon">
+                <h2 class="componentName">CarbonButton</h2>
+                <carbon-button variant="primary">Primary</carbon-button>
+                <carbon-button variant="secondary">Secondary</carbon-button>
+                <carbon-button variant="tertiary">Tertiary</carbon-button>
+                <carbon-button variant="danger">Danger</carbon-button>
+                <carbon-button variant="ghost">Ghost</carbon-button>
+            </div>
 
-      <div class="lightning">
-        <h2 class="componentName">LightningButtonIcon</h2>
-        <lightning-button-icon></lightning-button-icon>
-        <lightning-button-icon disabled></lightning-button-icon>
-        <lightning-button-icon variant="neutral"></lightning-button-icon>
-        <lightning-button-icon
-          variant="neutral"
-          disabled
-        ></lightning-button-icon>
-        <lightning-button-icon
-          variant="brand"
-          symbol="search"
-        ></lightning-button-icon>
-        <lightning-button-icon
-          variant="brand"
-          symbol="search"
-          disabled
-        ></lightning-button-icon>
-      </div>
+            <div class="lightning">
+                <h2 class="componentName">LightningButtonIcon</h2>
+                <lightning-button-icon></lightning-button-icon>
+                <lightning-button-icon disabled></lightning-button-icon>
+                <lightning-button-icon
+                    variant="neutral"
+                ></lightning-button-icon>
+                <lightning-button-icon
+                    variant="neutral"
+                    disabled
+                ></lightning-button-icon>
+                <lightning-button-icon
+                    variant="brand"
+                    symbol="search"
+                ></lightning-button-icon>
+                <lightning-button-icon
+                    variant="brand"
+                    symbol="search"
+                    disabled
+                ></lightning-button-icon>
+            </div>
 
-      <div class="plain">
-        <h2 class="componentName"></h2>
-        <!-- Not in Plain -->
-      </div>
+            <div class="plain">
+                <h2 class="componentName"></h2>
+                <!-- Not in Plain -->
+            </div>
 
-      <div class="carbon">
-        <h2 class="componentName"></h2>
-        <!-- Not in Carbon -->
-      </div>
+            <div class="carbon">
+                <h2 class="componentName"></h2>
+                <!-- Not in Carbon -->
+            </div>
 
-      <div class="lightning">
-        <h2 class="componentName">LightningButtonMenu</h2>
-        <lightning-button-menu variant="neutral">
-          <lightning-menu-item>One</lightning-menu-item>
-          <lightning-menu-item>Two</lightning-menu-item>
-          <lightning-menu-item>Three</lightning-menu-item>
-          <lightning-menu-item>Four</lightning-menu-item>
-        </lightning-button-menu>
-      </div>
+            <div class="lightning">
+                <h2 class="componentName">LightningButtonMenu</h2>
+                <lightning-button-menu variant="neutral">
+                    <lightning-menu-item>One</lightning-menu-item>
+                    <lightning-menu-item>Two</lightning-menu-item>
+                    <lightning-menu-item>Three</lightning-menu-item>
+                    <lightning-menu-item>Four</lightning-menu-item>
+                </lightning-button-menu>
+            </div>
 
-      <div class="plain">
-        <h2 class="componentName">PlainMenuButton</h2>
-        <elix-menu-button>
-          <elix-menu-item>One</elix-menu-item>
-          <elix-menu-item>Two</elix-menu-item>
-          <elix-menu-item>Three</elix-menu-item>
-          <elix-menu-item>Four</elix-menu-item>
-        </elix-menu-button>
-      </div>
+            <div class="plain">
+                <h2 class="componentName">PlainMenuButton</h2>
+                <elix-menu-button>
+                    <elix-menu-item>One</elix-menu-item>
+                    <elix-menu-item>Two</elix-menu-item>
+                    <elix-menu-item>Three</elix-menu-item>
+                    <elix-menu-item>Four</elix-menu-item>
+                </elix-menu-button>
+            </div>
 
-      <div class="carbon">
-        <h2 class="componentName"></h2>
-        <!-- Not in Carbon -->
-      </div>
+            <div class="carbon">
+                <h2 class="componentName"></h2>
+                <!-- Not in Carbon -->
+            </div>
 
-      <div class="lightning">
-        <h2 class="componentName">LightningCarousel</h2>
-        <lightning-carousel>
-          <!-- TODO: Replace fake card with real card component -->
-          <div class="card">
-            <img class="cardImage" src="public/images/carousel-01.jpg" />
-            <div class="cardDetails">
-              <div class="cardTitle">First Card</div>
-              <div class="cardDescription">First card description</div>
+            <div class="lightning">
+                <h2 class="componentName">LightningCarousel</h2>
+                <lightning-carousel>
+                    <!-- TODO: Replace fake card with real card component -->
+                    <div class="card">
+                        <img
+                            class="cardImage"
+                            src="public/images/carousel-01.jpg"
+                        />
+                        <div class="cardDetails">
+                            <div class="cardTitle">First Card</div>
+                            <div class="cardDescription">
+                                First card description
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img
+                            class="cardImage"
+                            src="public/images/carousel-02.jpg"
+                        />
+                        <div class="cardDetails">
+                            <div class="cardTitle">Second Card</div>
+                            <div class="cardDescription">
+                                Second card description
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img
+                            class="cardImage"
+                            src="public/images/carousel-03.jpg"
+                        />
+                        <div class="cardDetails">
+                            <div class="cardTitle">Third Card</div>
+                            <div class="cardDescription">
+                                Third card description
+                            </div>
+                        </div>
+                    </div>
+                </lightning-carousel>
+            </div>
+
+            <div class="plain">
+                <h2 class="componentName">PlainCarousel</h2>
+                <elix-carousel
+                    arrow-button-overlap="false"
+                    proxy-list-overlap="false"
+                >
+                    <img
+                        class="elixImage"
+                        src="public/images/elix-image-01.jpg"
+                    />
+                    <img
+                        class="elixImage"
+                        src="public/images/elix-image-02.jpg"
+                    />
+                    <img
+                        class="elixImage"
+                        src="public/images/elix-image-03.jpg"
+                    />
+                </elix-carousel>
+            </div>
+
+            <div class="carbon">
+                <h2 class="componentName"></h2>
+                <!-- Not in Carbon -->
+            </div>
+
+            <div class="lightning">
+                <h2 class="componentName">LightningCarouselSlideshow</h2>
+                <lightning-carousel-slideshow>
+                    <div class="card">
+                        <img
+                            class="cardImage"
+                            src="public/images/carousel-01.jpg"
+                        />
+                        <div class="cardDetails">
+                            <div class="cardTitle">First Card</div>
+                            <div class="cardDescription">
+                                First card description
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img
+                            class="cardImage"
+                            src="public/images/carousel-02.jpg"
+                        />
+                        <div class="cardDetails">
+                            <div class="cardTitle">Second Card</div>
+                            <div class="cardDescription">
+                                Second card description
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img
+                            class="cardImage"
+                            src="public/images/carousel-03.jpg"
+                        />
+                        <div class="cardDetails">
+                            <div class="cardTitle">Third Card</div>
+                            <div class="cardDescription">
+                                Third card description
+                            </div>
+                        </div>
+                    </div>
+                </lightning-carousel-slideshow>
+            </div>
+
+            <div class="plain">
+                <h2 class="componentName">PlainCarouselSlideshow</h2>
+                <elix-carousel-slideshow
+                    arrow-button-overlap="false"
+                    proxy-list-overlap="false"
+                >
+                    <img
+                        class="elixImage"
+                        src="public/images/elix-image-01.jpg"
+                    />
+                    <img
+                        class="elixImage"
+                        src="public/images/elix-image-02.jpg"
+                    />
+                    <img
+                        class="elixImage"
+                        src="public/images/elix-image-03.jpg"
+                    />
+                </elix-carousel-slideshow>
+            </div>
+
+            <div class="carbon">
+                <h2 class="componentName"></h2>
+                <!-- Not in Carbon -->
+            </div>
+
+            <div class="lightning">
+                <h2 class="componentName">LightningDropdownList</h2>
+                <lightning-dropdown-list variant="neutral">
+                    <lightning-menu-item>One</lightning-menu-item>
+                    <lightning-menu-item>Two</lightning-menu-item>
+                    <lightning-menu-item>Three</lightning-menu-item>
+                    <lightning-menu-item>Four</lightning-menu-item>
+                </lightning-dropdown-list>
+            </div>
+
+            <div class="plain">
+                <h2 class="componentName">PlainDropdownList</h2>
+                <elix-dropdown-list>
+                    <div>One</div>
+                    <div>Two</div>
+                    <div>Three</div>
+                    <div>Four</div>
+                </elix-dropdown-list>
+            </div>
+
+            <div class="carbon">
+                <h2 class="componentName">CarbonDropdownList</h2>
+                <carbon-dropdown-list>
+                    <carbon-menu-item>One</carbon-menu-item>
+                    <carbon-menu-item>Two</carbon-menu-item>
+                    <carbon-menu-item>Three</carbon-menu-item>
+                    <carbon-menu-item>Four</carbon-menu-item>
+                </carbon-dropdown-list>
+            </div>
+
+            <div class="lightning">
+                <h2 class="componentName">LightningIcon</h2>
+                <lightning-icon></lightning-icon>
+                <lightning-icon
+                    variant="success"
+                    symbol="like"
+                ></lightning-icon>
+                <lightning-icon
+                    set="standard"
+                    symbol="opportunity"
+                    size="medium"
+                ></lightning-icon>
+                <lightning-icon
+                    set="standard"
+                    symbol="case"
+                    size="large"
+                ></lightning-icon>
+            </div>
+
+            <div class="plain">
+                <h2 class="componentName"></h2>
+                <!-- Not in Plain -->
+            </div>
+
+            <div class="carbon">
+                <h2 class="componentName"></h2>
+                <!-- Not in Carbon -->
+            </div>
+
+            <div class="lightning">
+                <h2 class="componentName">LightningListBox</h2>
+                <lightning-list-box>
+                    <div>One</div>
+                    <div>Two</div>
+                    <div>Three</div>
+                    <div>Four</div>
+                    <div>Five</div>
+                </lightning-list-box>
+            </div>
+
+            <div class="plain">
+                <h2 class="componentName">PlainListBox</h2>
+                <elix-list-box>
+                    <div>One</div>
+                    <div>Two</div>
+                    <div>Three</div>
+                    <div>Four</div>
+                    <div>Five</div>
+                </elix-list-box>
+            </div>
+
+            <div class="carbon">
+                <h2 class="componentName"></h2>
+                <!-- Not in Carbon -->
             </div>
 
             <div class="lightning">
@@ -177,32 +402,15 @@
                     <elix-menu-item>Four</elix-menu-item>
                 </elix-menu>
             </div>
-          </div>
-        </lightning-carousel>
-      </div>
 
-      <div class="plain">
-        <h2 class="componentName">PlainCarousel</h2>
-        <elix-carousel arrow-button-overlap="false" proxy-list-overlap="false">
-          <img class="elixImage" src="public/images/elix-image-01.jpg" />
-          <img class="elixImage" src="public/images/elix-image-02.jpg" />
-          <img class="elixImage" src="public/images/elix-image-03.jpg" />
-        </elix-carousel>
-      </div>
-
-      <div class="carbon">
-        <h2 class="componentName"></h2>
-        <!-- Not in Carbon -->
-      </div>
-
-      <div class="lightning">
-        <h2 class="componentName">LightningCarouselSlideshow</h2>
-        <lightning-carousel-slideshow>
-          <div class="card">
-            <img class="cardImage" src="public/images/carousel-01.jpg" />
-            <div class="cardDetails">
-              <div class="cardTitle">First Card</div>
-              <div class="cardDescription">First card description</div>
+            <div class="carbon">
+                <h2 class="componentName">CarbonMenu</h2>
+                <carbon-menu>
+                    <carbon-menu-item>One</carbon-menu-item>
+                    <carbon-menu-item>Two</carbon-menu-item>
+                    <carbon-menu-item>Three</carbon-menu-item>
+                    <carbon-menu-item>Four</carbon-menu-item>
+                </carbon-menu>
             </div>
 
             <div class="lightning">
@@ -225,160 +433,6 @@
                     <div class="placeholder"></div>
                 </carbon-overlay-frame>
             </div>
-          </div>
-        </lightning-carousel-slideshow>
-      </div>
-
-      <div class="plain">
-        <h2 class="componentName">PlainCarouselSlideshow</h2>
-        <elix-carousel-slideshow
-          arrow-button-overlap="false"
-          proxy-list-overlap="false"
-        >
-          <img class="elixImage" src="public/images/elix-image-01.jpg" />
-          <img class="elixImage" src="public/images/elix-image-02.jpg" />
-          <img class="elixImage" src="public/images/elix-image-03.jpg" />
-        </elix-carousel-slideshow>
-      </div>
-
-      <div class="carbon">
-        <h2 class="componentName"></h2>
-        <!-- Not in Carbon -->
-      </div>
-
-      <div class="lightning">
-        <h2 class="componentName">LightningDropdownList</h2>
-        <lightning-dropdown-list variant="neutral">
-          <lightning-menu-item>One</lightning-menu-item>
-          <lightning-menu-item>Two</lightning-menu-item>
-          <lightning-menu-item>Three</lightning-menu-item>
-          <lightning-menu-item>Four</lightning-menu-item>
-        </lightning-dropdown-list>
-      </div>
-
-      <div class="plain">
-        <h2 class="componentName">PlainDropdownList</h2>
-        <elix-dropdown-list>
-          <div>One</div>
-          <div>Two</div>
-          <div>Three</div>
-          <div>Four</div>
-        </elix-dropdown-list>
-      </div>
-
-      <div class="carbon">
-        <h2 class="componentName">CarbonDropdownList</h2>
-        <carbon-dropdown-list>
-          <carbon-menu-item>One</carbon-menu-item>
-          <carbon-menu-item>Two</carbon-menu-item>
-          <carbon-menu-item>Three</carbon-menu-item>
-          <carbon-menu-item>Four</carbon-menu-item>
-        </carbon-dropdown-list>
-      </div>
-
-      <div class="lightning">
-        <h2 class="componentName">LightningIcon</h2>
-        <lightning-icon></lightning-icon>
-        <lightning-icon variant="success" symbol="like"></lightning-icon>
-        <lightning-icon
-          set="standard"
-          symbol="opportunity"
-          size="medium"
-        ></lightning-icon>
-        <lightning-icon
-          set="standard"
-          symbol="case"
-          size="large"
-        ></lightning-icon>
-      </div>
-
-      <div class="plain">
-        <h2 class="componentName"></h2>
-        <!-- Not in Plain -->
-      </div>
-
-      <div class="carbon">
-        <h2 class="componentName"></h2>
-        <!-- Not in Carbon -->
-      </div>
-
-      <div class="lightning">
-        <h2 class="componentName">LightningListBox</h2>
-        <lightning-list-box>
-          <div>One</div>
-          <div>Two</div>
-          <div>Three</div>
-          <div>Four</div>
-          <div>Five</div>
-        </lightning-list-box>
-      </div>
-
-      <div class="plain">
-        <h2 class="componentName">PlainListBox</h2>
-        <elix-list-box>
-          <div>One</div>
-          <div>Two</div>
-          <div>Three</div>
-          <div>Four</div>
-          <div>Five</div>
-        </elix-list-box>
-      </div>
-
-      <div class="carbon">
-        <h2 class="componentName"></h2>
-        <!-- Not in Carbon -->
-      </div>
-
-      <div class="lightning">
-        <h2 class="componentName">LightningMenu</h2>
-        <lightning-menu variant="neutral">
-          <lightning-menu-item>One</lightning-menu-item>
-          <lightning-menu-item>Two</lightning-menu-item>
-          <lightning-menu-item>Three</lightning-menu-item>
-          <lightning-menu-item>Four</lightning-menu-item>
-        </lightning-menu>
-      </div>
-
-      <div class="plain">
-        <h2 class="componentName">PlainMenu</h2>
-        <elix-menu>
-          <elix-menu-item>One</elix-menu-item>
-          <elix-menu-item>Two</elix-menu-item>
-          <elix-menu-item>Three</elix-menu-item>
-          <elix-menu-item>Four</elix-menu-item>
-        </elix-menu>
-      </div>
-
-      <div class="carbon">
-        <h2 class="componentName">CarbonMenu</h2>
-        <carbon-menu>
-          <carbon-menu-item>One</carbon-menu-item>
-          <carbon-menu-item>Two</carbon-menu-item>
-          <carbon-menu-item>Three</carbon-menu-item>
-          <carbon-menu-item>Four</carbon-menu-item>
-        </carbon-menu>
-      </div>
-
-      <div class="lightning">
-        <h2 class="componentName">LightningOverlayFrame</h2>
-        <lightning-overlay-frame>
-          <div class="placeholder"></div>
-        </lightning-overlay-frame>
-      </div>
-
-      <div class="plain">
-        <h2 class="componentName">PlainOverlayFrame</h2>
-        <elix-overlay-frame>
-          <div class="placeholder"></div>
-        </elix-overlay-frame>
-      </div>
-
-      <div>
-        <h2 class="carbon">CarbonOverlayFrame</h2>
-        <carbon-overlay-frame>
-          <div class="placeholder"></div>
-        </carbon-overlay-frame>
-      </div>
-    </div>
-  </body>
+        </div>
+    </body>
 </html>
