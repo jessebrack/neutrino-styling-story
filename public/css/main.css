@@ -193,7 +193,10 @@ h1 {
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 
-sds-button {
+/* NOTE: need a better way to do this */
+sds-button,
+carbon-button,
+purple3-button {
     margin-bottom: 0.25em;
 }
 
