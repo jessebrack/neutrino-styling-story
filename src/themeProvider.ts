@@ -24,10 +24,10 @@ export default class ThemeProvider extends ReactiveElement {
             let imports;
             const style = template.createElement('style');
             template.replace(this[internal.ids].import, style);
-            imports = `@import url("src/${this.system}/${this.system}Theme.css")`;
+            imports = `@import url("src/themes/${this.system}Theme.css")`;
             if (this.system && changed.theme && this.theme !== null) {
                 imports = [
-                    `@import url("src/${this.system}/${this.system}Theme.css");`,
+                    `@import url("src/themes/${this.system}Theme.css");`,
                 ].join('\n');
             }
             style.textContent = imports;

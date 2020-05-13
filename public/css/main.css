@@ -199,7 +199,6 @@ sds-button {
 
 body {
     font-family: 'Salesforce Sans';
-    /* background-image: url('../../src/assets/images/demo-only-brand.png');
     background-position: bottom right;
     background-repeat: no-repeat; */
 }
@@ -473,7 +472,7 @@ h4 {
 }
 
 .neo-title {
-    background: url('../../src/assets/images/bg.png');
+    background: url('../images/bg.png');
     background-size: contain;
     padding: 2.5rem;
     color: #fff;

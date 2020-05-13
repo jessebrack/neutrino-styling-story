@@ -23,7 +23,10 @@ export default class SdsButton extends Button {
         if (this[internal.firstRender]) {
             this[internal.ids].inner.classList.add('sds-button');
         }
-        // Append variant class, if attribute exist
+        /**
+         * Append variant class, if attribute exist. Variants use classes
+         * instead of attaching to attributes to keep blueprints decoupled
+         */
         if (changed.variant) {
             const computedClassName = `sds-button_${
                 this[internal.state].variant

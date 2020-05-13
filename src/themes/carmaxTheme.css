@@ -2,21 +2,21 @@
 
 :host {
     /* ================
-  CodeScience Styling API
+  Carmax Styling API
   ================= */
 
     /* Public */
 
-    /* CodeScience API */
+    /* Carmax API */
 
     /* Private */
 
-    --cs-brand-accessible: #ffd900;
+    --cmax-brand-accessible: #ffd900;
     --sds-c-button-brand-color-text: #053361;
     --sds-c-button-color-text: #053361;
     --sds-c-button-brand-outline-color-border: #053361;
 
     /* SDS API */
 
-    --sds-g-brand-accessible: var(--cs-brand-accessible);
+    --sds-g-brand-accessible: var(--cmax-brand-accessible);
 }
