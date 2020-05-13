@@ -1,3 +1,32 @@
+/**
+ * NOTE
+ *
+ * In an ideal situation the static values being used as fallbacks would be
+ * stored as a variable in perhaps Sass and then compiled to a static value.
+ *
+ * Also note much of this CSS is a hodge podge of SLDS v3 work, it's not
+ * complete and thorough by any means but usable for the proof of concept
+*/
+
+/**
+ * Standard Button
+ *
+ * Variants use this class's Styling API to get their look. This is the primary
+ * Styling API for the button.
+ *
+ * Style Order:
+ * 1. Properties and static values
+ * 2. Properties with open assignments
+ * 3. Properties with open assignments and theming support
+ * 4. Custom properties with closed assignemnt
+ * 5. Custom properties with open assignment
+ * 6. Custom properties with open assignment and theming support
+ *
+ * Styling API Breakdown:
+ * --sds-c-foo -> Local to component
+ * --sds-g-foo -> Related to theming
+ * Static values -> Sensible defaults as fallback
+*/
 .sds-button {
     appearance: none;
     background-clip: border-box;
@@ -8,23 +37,25 @@
     white-space: normal;
     position: relative;
     vertical-align: middle;
-    font-size: var(--sds-c-button-font-size, var(--sds-g-font-size, inherit));
+    /* Local Open Assignments */
     font-weight: var(--sds-c-button-font-weight, normal);
     padding: var(--sds-c-button-padding, 0);
     background-color: var(--sds-c-button-color-background, transparent);
-    border-radius: var(--sds-c-button-radius, var(--sds-g-radius, 0.25rem));
     border: var(--sds-c-button-border-width, 1px) solid
         var(--sds-c-button-color-border, transparent);
-    color: var(
-        --sds-c-button-color-text,
-        var(--sds-g-brand-accessible, inherit)
-    );
     line-height: var(--sds-c-button-line-height, 1.875rem);
     box-shadow: var(--sds-c-button-shadow, none);
     margin-top: var(--sds-c-button-spacing-vertical-start, 0);
     margin-right: var(--sds-c-button-spacing-horizontal-end, 0);
     margin-bottom: var(--sds-c-button-spacing-vertical-end, 0);
     margin-left: var(--sds-c-button-spacing-horizontal-start, 0);
+    /* Themeable */
+    font-size: var(--sds-c-button-font-size, var(--sds-g-font-size, inherit));
+    border-radius: var(--sds-c-button-radius, var(--sds-g-radius, 0.25rem));
+    color: var(
+        --sds-c-button-color-text,
+        var(--sds-g-brand-accessible, inherit)
+    );
 }
 
 .sds-button:hover,
@@ -37,33 +68,32 @@
 .sds-button:hover,
 .sds-button:focus {
     border-color: var(--sds-c-button-color-border-active, transparent);
+    background-color: var(--sds-c-button-color-background-active, transparent);
     color: var(
         --sds-c-button-color-text-active,
         var(--sds-g-brand-accessible-active, #000000)
     );
-    background-color: var(--sds-c-button-color-background-active, transparent);
 }
 
 .sds-button:focus {
     outline: 0;
+    z-index: var(--sds-c-button-depth-active, 0);
+    text-decoration: var(--sds-c-button-text-decoration-active, none);
     box-shadow: var(
         --sds-c-button-shadow-active,
         0 0 2px var(--sds-g-brand-accessible, #000000)
     );
-    z-index: var(--sds-c-button-depth-active, 0);
-    -webkit-text-decoration: var(--sds-c-button-text-decoration-active, none);
-    text-decoration: var(--sds-c-button-text-decoration-active, none);
 }
 
 .sds-button[disabled],
 .sds-button:disabled {
+    cursor: default;
+    border-color: var(--sds-c-button-color-border-disabled, transparent);
+    color: var(--sds-c-button-color-text-disabled, #dddbda);
     background-color: var(
         --sds-c-button-color-background-disabled,
         transparent
     );
-    border-color: var(--sds-c-button-color-border-disabled, transparent);
-    color: var(--sds-c-button-color-text-disabled, #dddbda);
-    cursor: default;
 }
 
 .sds-button[disabled] *,
@@ -71,59 +101,260 @@
     pointer-events: none;
 }
 
+/**
+ * Brand Button
+*/
 .sds-button_brand {
     padding-left: 1rem;
     padding-right: 1rem;
     transition: border 0.15s linear;
+    --sds-c-button-color-background-disabled: #c9c7c5;
+    --sds-c-button-color-border-disabled: #c9c7c5;
+    --sds-c-button-color-text-disabled: white;
+    --sds-c-button-color-text: var(--sds-c-button-brand-color-text, white);
+    --sds-c-button-shadow: var(--sds-c-button-brand-shadow, none);
     --sds-c-button-color-background: var(
         --sds-c-button-brand-color-background,
         var(--sds-g-brand-accessible, #3e3e3c)
-    );
-    --sds-c-button-color-border: var(
-        --sds-c-button-brand-color-border,
-        var(--sds-g-brand-accessible, #3e3e3c)
-    );
-    --sds-c-button-color-text: var(--sds-c-button-brand-color-text, white);
-    --sds-c-button-shadow: var(--sds-c-button-brand-shadow, none);
-    --sds-c-button-color-text-active: var(
-        --sds-c-button-brand-color-text-active,
-        white
     );
     --sds-c-button-color-background-active: var(
         --sds-c-button-brand-color-background-active,
         var(--sds-g-brand-accessible-active, #000000)
     );
-    --sds-c-button-color-background-disabled: #c9c7c5;
-    --sds-c-button-color-border-disabled: #c9c7c5;
-    --sds-c-button-color-text-disabled: white;
+    --sds-c-button-color-border: var(
+        --sds-c-button-brand-color-border,
+        var(--sds-g-brand-accessible, #3e3e3c)
+    );
+    --sds-c-button-color-text-active: var(
+        --sds-c-button-brand-color-text-active,
+        white
+    );
 }
 
+/**
+ * Brand Button Outline
+*/
 .sds-button_brand-outline {
     padding-left: 1rem;
     padding-right: 1rem;
     transition: border 0.15s linear;
+    --sds-c-button-color-background-disabled: white;
+    --sds-c-button-color-border-disabled: #dddbda;
+    --sds-c-button-shadow: var(--sds-c-button-neutral-shadow);
+    --sds-c-button-color-background: var(
+        --sds-c-button-neutral-color-background,
+        white
+    );
+    --sds-c-button-color-background-active: var(
+        --sds-c-button-neutral-color-background-active,
+        #fafaf9
+    );
+    --sds-c-button-color-border: var(
+        --sds-c-button-brand-outline-color-border,
+        var(--sds-g-brand-accessible, #3e3e3c)
+    );
+    --sds-c-button-color-border-active: var(
+        --sds-c-button-brand-color-border-active,
+        var(--sds-g-brand-accessible, #000000)
+    );
+}
+
+/**
+ *  Neutral Button
+*/
+.sds-button_neutral {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: border 0.15s linear;
+    --sds-c-button-color-background-disabled: white;
+    --sds-c-button-color-border-disabled: #dddbda;
+    --sds-c-icon-size: 0.75rem;
+    --sds-c-button-shadow: var(--sds-c-button-neutral-shadow);
     --sds-c-button-color-background: var(
         --sds-c-button-neutral-color-background,
         white
     );
     --sds-c-button-color-border: var(
-        --sds-c-button-brand-outline-color-border,
-        var(--sds-g-brand-accessible, #3e3e3c)
+        --sds-c-button-neutral-color-border,
+        #dddbda
     );
     --sds-c-button-color-background-active: var(
         --sds-c-button-neutral-color-background-active,
         #fafaf9
     );
     --sds-c-button-color-border-active: var(
-        --sds-c-button-brand-color-border-active,
-        var(--sds-g-brand-accessible, #000000)
+        --sds-c-button-neutral-color-border-active,
+        #dddbda
     );
-    --sds-c-button-color-background-disabled: white;
-    --sds-c-button-color-border-disabled: #dddbda;
-    --sds-c-button-shadow: var(--sds-c-button-neutral-shadow);
+    --sds-c-icon-color: var(
+        --sds-c-button-neutral-icon-color,
+        var(--sds-g-brand-accessible, #0070d2)
+    );
+    --sds-c-button-color-text: var(
+        --sds-c-button-neutral-color-text,
+        var(--sds-brand-accessible, inherit)
+    );
+    --sds-c-button-color-text-active: var(
+        --sds-c-button-neutral-color-text-active,
+        var(--sds-g-brand-accessible-active, inherit)
+    );
 }
 
-.sds-button_neutral {
+/**
+ *  Destructive Button
+ *
+ * These could probably be updated to use open assignments and be more
+ * customizable but seems unneccessary for the PoC.
+*/
+.sds-button_destructive {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: border 0.15s linear;
+    --sds-c-button-color-background: #c23934;
+    --sds-c-button-color-border: #c23934;
+    --sds-c-button-color-text: white;
+    --sds-c-button-color-background-active: #a61a14;
+    --sds-c-button-color-text-active: white;
+    --sds-c-button-color-background-disabled: #c9c7c5;
+    --sds-c-button-color-border-disabled: #c9c7c5;
+    --sds-c-button-color-text-disabled: white;
+}
+
+/**
+ *  Destructive Text Button
+ *
+ * These could probably be updated to use open assignments and be more
+ * customizable but seems unneccessary for the PoC.
+*/
+.sds-button_destructive-text {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: border 0.15s linear;
+    --sds-c-button-color-background-disabled: white;
+    --sds-c-button-color-border-disabled: #dddbda;
+    --sds-c-button-color-background: var(
+        --sds-c-button-neutral-color-background,
+        white
+    );
+    --sds-c-button-color-border: var(
+        --sds-c-button-neutral-color-border,
+        #dddbda
+    );
+    --sds-c-button-color-text: var(
+        --sds-c-button-destructive-color-text,
+        #c23934
+    );
+    --sds-c-button-color-background-active: var(
+        --sds-c-button-neutral-color-background-active,
+        #fafaf9
+    );
+    --sds-c-button-color-border-active: var(
+        --sds-c-button-neutral-color-border-active,
+        #dddbda
+    );
+    --sds-c-button-color-text-active: var(
+        --sds-c-button-destructive-color-text-active,
+        #a12b2b
+    );
+}
+
+/**
+ *  Inverse Button
+ *
+ * These could probably be updated to use open assignments and be more
+ * customizable but seems unneccessary for the PoC.
+*/
+.sds-button_inverse {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: border 0.15s linear;
+    --sds-c-button-color-background-disabled: transparent;
+    --sds-c-button-color-border-disabled: rgba(255, 255, 255, 0.15);
+    --sds-c-button-color-text-disabled: rgba(255, 255, 255, 0.15);
+    --sds-c-button-color-background: var(
+        --sds-c-button-inverse-color-background,
+        transparent
+    );
+    --sds-c-button-color-border: var(
+        --sds-c-button-inverse-color-border,
+        white
+    );
+    --sds-c-button-color-text: var(--sds-c-button-inverse-color-text, white);
+    --sds-c-button-color-border-active: var(
+        --sds-c-button-inverse-color-border-active,
+        white
+    );
+    --sds-c-button-color-text-active: var(
+        --sds-c-button-inverse-color-text-active,
+        #f3f2f2
+    );
+}
+
+.sds-button_inverse:focus {
+    outline: none;
+    border: 1px solid var(--sds-c-inverse-button-color-border-active, #ecebea);
+    box-shadow: var(--sds-c-inverse-button-shadow-active, 0 0 3px #ecebea);
+}
+
+/**
+ *  Success Button
+ *
+ * These could probably be updated to use open assignments and be more
+ * customizable but seems unneccessary for the PoC.
+*/
+.sds-button_success {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: border 0.15s linear;
+    --sds-c-button-color-background: #4bca81;
+    --sds-c-button-color-border: #4bca81;
+    --sds-c-button-color-text: #080707;
+    --sds-c-button-color-border-active: #04844b;
+    --sds-c-button-color-background-active: #04844b;
+    --sds-c-button-color-text-active: white;
+    --sds-c-button-color-background-disabled: #c9c7c5;
+    --sds-c-button-color-border-disabled: #c9c7c5;
+    --sds-c-button-color-text-disabled: white;
+}
+
+/**
+ *  Full Width Button
+ *
+ * NOTE: this would be a situation where we would want a component to have two
+ *       variant classes at the same time e.g. .sds-button_brand .sds-button_full-width
+*/
+.sds-button_full-width {
+    width: 100%;
+    justify-content: center;
+}
+
+/**
+ *  Icon Button
+ *
+ * NOTE: not flushed out
+*/
+.sds-button__icon-left,
+::slotted(.sds-button__icon-left) {
+    display: inline-flex;
+    align-self: center;
+    margin-right: 0.5rem;
+    --sds-c-icon-color: currentColor;
+}
+
+.sds-button__icon-right,
+::slotted(.sds-button__icon-right) {
+    display: inline-flex;
+    align-self: center;
+    margin-left: 0.5rem;
+    --sds-c-icon-color: currentColor;
+}
+
+/**
+ *  Stateful Button
+ *
+ * NOTE: not flushed out
+*/
+.sds-button_stateful {
     padding-left: 1rem;
     padding-right: 1rem;
     transition: border 0.15s linear;
@@ -137,11 +368,7 @@
     );
     --sds-c-button-color-text: var(
         --sds-c-button-neutral-color-text,
-        var(--sds-brand-accessible, inherit)
-    );
-    --sds-c-button-color-text-active: var(
-        --sds-c-button-neutral-color-text-active,
-        var(--sds-g-brand-accessible-active, inherit)
+        var(--sds-brand-accessible, #0070d2)
     );
     --sds-c-button-color-background-active: var(
         --sds-c-button-neutral-color-background-active,
@@ -153,205 +380,51 @@
     );
     --sds-c-button-color-background-disabled: white;
     --sds-c-button-color-border-disabled: #dddbda;
-    --sds-c-button-shadow: var(--sds-c-button-neutral-shadow);
-    --sds-c-icon-color: var(--sds-g-brand-accessible, #0070d2);
-    --sds-c-icon-size: 0.75rem;
+    --sds-c-icon-color: var(--sds-brand-accessible, #0070d2);
 }
 
-/* -------------------------------------------------------------------------------------
-	 Experience layer specific?
-	 ------------------------------------------------------------------------------------- */
-
-.lwc-button_destructive {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    -webkit-transition: border 0.15s linear;
-    transition: border 0.15s linear;
-    --lwc-c-button-color-background: #c23934;
-    --lwc-c-button-color-border: #c23934;
-    --lwc-c-button-color-text: white;
-    --lwc-c-button-color-background-active: #a61a14;
-    --lwc-c-button-color-text-active: white;
-    --lwc-c-button-color-background-disabled: #c9c7c5;
-    --lwc-c-button-color-border-disabled: #c9c7c5;
-    --lwc-c-button-color-text-disabled: white;
+.sds-button_stateful-text-not-selected,
+.sds-button_stateful-text-selected,
+.sds-button_stateful-text-selected-focused {
+    display: var(--sds-c-button-stateful-display, none);
 }
-.lwc-button_destructive-text {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    -webkit-transition: border 0.15s linear;
-    transition: border 0.15s linear;
-    --lwc-c-button-color-background: var(
-        --lwc-c-button-neutral-color-background,
-        white
-    );
-    --lwc-c-button-color-border: var(
-        --lwc-c-button-neutral-color-border,
-        #dddbda
-    );
-    --lwc-c-button-color-text: var(
-        --lwc-c-button-destructive-color-text,
-        #c23934
-    );
-    --lwc-c-button-color-background-active: var(
-        --lwc-c-button-neutral-color-background-active,
-        #fafaf9
-    );
-    --lwc-c-button-color-border-active: var(
-        --lwc-c-button-neutral-color-border-active,
-        #dddbda
-    );
-    --lwc-c-button-color-text-active: var(
-        --lwc-c-button-destructive-color-text-active,
-        #a12b2b
-    );
-    --lwc-c-button-color-background-disabled: white;
-    --lwc-c-button-color-border-disabled: #dddbda;
+.sds-button_stateful-text-not-selected {
+    --sds-c-button-stateful-display: inline-flex;
 }
-.lwc-button_inverse {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    -webkit-transition: border 0.15s linear;
-    transition: border 0.15s linear;
-    --lwc-c-button-color-background: var(
-        --lwc-c-button-inverse-color-background,
-        transparent
-    );
-    --lwc-c-button-color-border: var(
-        --lwc-c-button-inverse-color-border,
-        white
-    );
-    --lwc-c-button-color-text: var(--lwc-c-button-inverse-color-text, white);
-    --lwc-c-button-color-border-active: var(
-        --lwc-c-button-inverse-color-border-active,
-        white
-    );
-    --lwc-c-button-color-text-active: var(
-        --lwc-c-button-inverse-color-text-active,
-        #f3f2f2
-    );
-    --lwc-c-button-color-background-disabled: transparent;
-    --lwc-c-button-color-border-disabled: rgba(255, 255, 255, 0.15);
-    --lwc-c-button-color-text-disabled: rgba(255, 255, 255, 0.15);
+.sds-button_stateful-text-selected,
+.sds-button_stateful-text-selected-focused {
+    --sds-c-button-stateful-display: none;
 }
-
-.lwc-button_inverse:focus {
-    border: 1px solid var(--lwc-c-inverse-button-color-border-active, #ecebea);
-    -webkit-box-shadow: var(
-        --lwc-c-inverse-button-shadow-active,
-        0 0 3px #ecebea
-    );
-    box-shadow: var(--lwc-c-inverse-button-shadow-active, 0 0 3px #ecebea);
-    outline: none;
+[aria-pressed='true'] .sds-button_stateful-text-not-selected {
+    --sds-c-button-stateful-display: none;
 }
-.lwc-button_success {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    -webkit-transition: border 0.15s linear;
-    transition: border 0.15s linear;
-    --lwc-c-button-color-background: #4bca81;
-    --lwc-c-button-color-border: #4bca81;
-    --lwc-c-button-color-text: #080707;
-    --lwc-c-button-color-border-active: #04844b;
-    --lwc-c-button-color-background-active: #04844b;
-    --lwc-c-button-color-text-active: white;
-    --lwc-c-button-color-background-disabled: #c9c7c5;
-    --lwc-c-button-color-border-disabled: #c9c7c5;
-    --lwc-c-button-color-text-disabled: white;
-}
-
-.lwc-button_full-width {
-    width: 100%;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-.lwc-button__icon-left,
-::slotted(.lwc-button__icon-left) {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -ms-flex-item-align: center;
-    align-self: center;
-    margin-right: 0.5rem;
-    --lwc-c-icon-color: currentColor;
-}
-.lwc-button__icon-right,
-::slotted(.lwc-button__icon-right) {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -ms-flex-item-align: center;
-    align-self: center;
-    margin-left: 0.5rem;
-    --lwc-c-icon-color: currentColor;
-}
-
-.lwc-button_start {
-    --lwc-c-button-radius: 0.25rem 0 0 0.25rem;
-}
-
-.lwc-button_end {
-    --lwc-c-button-radius: 0 0.25rem 0.25rem 0;
-    --lwc-c-button-shadow-brand: none;
-}
-.lwc-button_stateful {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    -webkit-transition: border 0.15s linear;
-    transition: border 0.15s linear;
-    --lwc-c-button-color-background: var(
-        --lwc-c-button-neutral-color-background,
-        white
-    );
-    --lwc-c-button-color-border: var(
-        --lwc-c-button-neutral-color-border,
-        #dddbda
-    );
-    --lwc-c-button-color-text: var(
-        --lwc-c-button-neutral-color-text,
-        var(--lwc-brand-accessible, #0070d2)
-    );
-    --lwc-c-button-color-background-active: var(
-        --lwc-c-button-neutral-color-background-active,
-        #fafaf9
-    );
-    --lwc-c-button-color-border-active: var(
-        --lwc-c-button-neutral-color-border-active,
-        #dddbda
-    );
-    --lwc-c-button-color-background-disabled: white;
-    --lwc-c-button-color-border-disabled: #dddbda;
-    --lwc-c-icon-color: var(--lwc-brand-accessible, #0070d2);
-}
-
-.lwc-button_stateful-text-not-selected,
-.lwc-button_stateful-text-selected,
-.lwc-button_stateful-text-selected-focused {
-    display: var(--lwc-c-button-stateful-display, none);
-}
-.lwc-button_stateful-text-not-selected {
-    --lwc-c-button-stateful-display: inline-flex;
-}
-.lwc-button_stateful-text-selected,
-.lwc-button_stateful-text-selected-focused {
-    --lwc-c-button-stateful-display: none;
-}
-[aria-pressed='true'] .lwc-button_stateful-text-not-selected {
-    --lwc-c-button-stateful-display: none;
-}
-[aria-pressed='true'] .lwc-button_stateful-text-selected {
-    --lwc-c-button-stateful-display: inline-flex;
+[aria-pressed='true'] .sds-button_stateful-text-selected {
+    --sds-c-button-stateful-display: inline-flex;
 }
 
 [aria-pressed='true']:not(:focus) {
-    --lwc-c-button-color-border: transparent;
+    --sds-c-button-color-border: transparent;
 }
-[aria-pressed='true']:hover .lwc-button_stateful-text-selected,
-[aria-pressed='true']:focus .lwc-button_stateful-text-selected {
-    --lwc-c-button-stateful-display: none;
+[aria-pressed='true']:hover .sds-button_stateful-text-selected,
+[aria-pressed='true']:focus .sds-button_stateful-text-selected {
+    --sds-c-button-stateful-display: none;
 }
-[aria-pressed='true']:hover .lwc-button_stateful-text-selected-focused,
-[aria-pressed='true']:focus .lwc-button_stateful-text-selected-focused {
-    --lwc-c-button-stateful-display: inline-flex;
+[aria-pressed='true']:hover .sds-button_stateful-text-selected-focused,
+[aria-pressed='true']:focus .sds-button_stateful-text-selected-focused {
+    --sds-c-button-stateful-display: inline-flex;
+}
+
+/**
+ *  Button Positions
+ *
+ * NOTE: another scenario where we would want two variant class names at the
+ *       same time.
+*/
+.sds-button_start {
+    --sds-c-button-radius: 0.25rem 0 0 0.25rem;
+}
+
+.sds-button_end {
+    --sds-c-button-radius: 0 0.25rem 0.25rem 0;
+    --sds-c-button-shadow-brand: none;
 }
