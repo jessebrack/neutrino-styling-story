@@ -6,10 +6,19 @@
     <title>Neutrino - Carousel</title>
     <link rel="stylesheet" href="/public/css/main.css" />
     <script src="dist/app.js" type="module"></script>
+    <script type="module">
+      // NOTE - super quick hack job just to see it in action
+      const sidebarToggle = document.querySelector('.neo-title');
+      const layout = document.querySelector('.neo-layout');
+      const toggleSidebar = () => {
+        layout.classList.toggle('neo-has-sidebar');
+      };
+      sidebarToggle.addEventListener('click', () => toggleSidebar());
+    </script>
   </head>
 
   <body>
-    <div class="neo-layout">
+    <div class="neo-layout neo-layout_carousel">
       <nav class="neo-nav">
         <p class="neo-brand-name">
           Neutrino
@@ -21,19 +30,23 @@
           <li><a href="#" class="neo-nav-item">Badges</a></li>
           <li><a href="#" class="neo-nav-item">Breadcrumbs</a></li>
           <li>
-            <span href="#" class="neo-nav-item neo-nav-item-active"
-              >Button</span
-            >
+            <a href="button.html" class="neo-nav-item">Button</a>
+          </li>
+          <li>
+            <span class="neo-nav-item neo-nav-item-active">Carousel</span>
           </li>
           <li><a href="#" class="neo-nav-item">Combobox</a></li>
           <li><a href="#" class="neo-nav-item">Datatable</a></li>
           <li><a href="#" class="neo-nav-item">Dialog</a></li>
         </ul>
         <h2>Recipes</h2>
+        <ul>
+          <li><a href="#" class="neo-nav-item">Card</a></li>
+        </ul>
       </nav>
       <main class="neo-content">
         <h1 class="neo-title">
-          Carousel
+          Carousel Slideshow
           <img
             src="/public/images/theme-toggle.png "
             class="neo-theme-toggle"
@@ -43,9 +56,6 @@
           <div class="row-cat neo-cat neo-cat-on-platform">
             On Platform
           </div>
-          <div class="row-cat neo-cat neo-cat-off-platform">
-            Off Platform
-          </div>
 
           <!-- Base Web Component -->
           <div class="neo-header row-bwc">
@@ -54,9 +64,16 @@
               Structural and functional components; no styling.
             </p>
           </div>
-          <div class="neo-item row-bwc col-span-11">
+          <div class="neo-item row-bwc col-span-7">
             <h3>Neutrino</h3>
-            <elix-border-button>Button</elix-border-button>
+            <elix-carousel
+              arrow-button-overlap="false"
+              proxy-list-overlap="false"
+            >
+              <img class="elixImage" src="public/images/elix-image-01.jpg" />
+              <img class="elixImage" src="public/images/elix-image-02.jpg" />
+              <img class="elixImage" src="public/images/elix-image-03.jpg" />
+            </elix-carousel>
           </div>
 
           <!-- Design System -->
@@ -67,34 +84,16 @@
               Styling API
             </p>
           </div>
-          <div class="neo-item row-ds neo-connector-in col-span-9">
+          <div class="neo-item row-ds neo-connector-in col-span-7">
             <h3>Salesforce Design System</h3>
-            <sds-button>Standard</sds-button>
-            <sds-button variant="neutral">Neutral</sds-button>
-            <sds-button variant="brand">Brand</sds-button>
-            <sds-button variant="brand-outline">Brand Outline</sds-button>
-            <sds-button variant="destructive">Destructive</sds-button>
-            <sds-button variant="destructive-text">Destructive Text</sds-button>
-            <sds-button variant="inverse">Inverse</sds-button>
-            <sds-button variant="success">Success</sds-button>
-          </div>
-          <div class="neo-item neo-connector-in row-ds">
-            <h3>Purple 3</h3>
-            <purple3-button variant="primary">Primary</purple3-button>
-            <purple3-button variant="secondary">Secondary</purple3-button>
-            <purple3-button variant="tertiary">Tertiary</purple3-button>
-            <purple3-button variant="danger">Danger</purple3-button>
-            <purple3-button variant="warning">Warning</purple3-button>
-            <purple3-button variant="info">Info</purple3-button>
-            <purple3-button variant="success">Success</purple3-button>
-          </div>
-          <div class="neo-item neo-connector-in row-ds">
-            <h3>Carbon Design System</h3>
-            <carbon-button variant="primary">Primary</carbon-button>
-            <carbon-button variant="secondary">Secondary</carbon-button>
-            <carbon-button variant="tertiary">Tertiary</carbon-button>
-            <carbon-button variant="danger">Danger</carbon-button>
-            <carbon-button variant="ghost">Ghost</carbon-button>
+            <sds-carousel-slideshow
+              arrow-button-overlap="false"
+              proxy-list-overlap="false"
+            >
+              <img class="elixImage" src="public/images/elix-image-01.jpg" />
+              <img class="elixImage" src="public/images/elix-image-02.jpg" />
+              <img class="elixImage" src="public/images/elix-image-03.jpg" />
+            </sds-carousel-slideshow>
           </div>
 
           <!-- Javascript Framework -->
@@ -103,7 +102,7 @@
             <p>Platform specific framework</p>
           </div>
           <div
-            class="neo-item row-js neo-item_empty neo-connector-in col-span-8"
+            class="neo-item row-js neo-item_empty neo-connector-in col-span-7"
           >
             <p>↑</p>
             <p>Lightning Web Components (LWC)</p>
@@ -119,42 +118,41 @@
           <div class="neo-item row-exp neo-connector-in col-span-4">
             <sds-theme-provider system="lightning">
               <h3>Product (LEX)</h3>
-              <!-- lwc-button if consuming LWC? -->
-              <sds-button>Standard</sds-button>
-              <sds-button variant="neutral">Neutral</sds-button>
-              <sds-button variant="brand">Brand</sds-button>
-              <sds-button variant="brand-outline">Brand Outline</sds-button>
+              <elix-carousel
+                arrow-button-overlap="false"
+                proxy-list-overlap="false"
+              >
+                <img class="elixImage" src="public/images/elix-image-01.jpg" />
+                <img class="elixImage" src="public/images/elix-image-02.jpg" />
+                <img class="elixImage" src="public/images/elix-image-03.jpg" />
+              </elix-carousel>
             </sds-theme-provider>
           </div>
           <div class="neo-item row-exp neo-connector-in col-span-2">
             <h3>Digital Experience</h3>
             <sds-theme-provider system="websites">
-              <sds-button>Standard</sds-button>
-              <sds-button variant="neutral">Neutral</sds-button>
-              <sds-button variant="brand">Brand</sds-button>
-              <sds-button variant="brand-outline">Brand Outline</sds-button>
+              <elix-carousel
+                arrow-button-overlap="false"
+                proxy-list-overlap="false"
+              >
+                <img class="elixImage" src="public/images/elix-image-01.jpg" />
+                <img class="elixImage" src="public/images/elix-image-02.jpg" />
+                <img class="elixImage" src="public/images/elix-image-03.jpg" />
+              </elix-carousel>
             </sds-theme-provider>
           </div>
-          <div class="neo-item row-exp neo-connector-in col-span-2">
+          <div class="neo-item row-exp neo-connector-in">
             <h3>Carmax</h3>
             <sds-theme-provider system="carmax">
-              <sds-button>Standard</sds-button>
-              <sds-button variant="neutral">Neutral</sds-button>
-              <sds-button variant="brand">Brand</sds-button>
-              <sds-button variant="brand-outline">Brand Outline</sds-button>
+              <elix-carousel
+                arrow-button-overlap="false"
+                proxy-list-overlap="false"
+              >
+                <img class="elixImage" src="public/images/elix-image-01.jpg" />
+                <img class="elixImage" src="public/images/elix-image-02.jpg" />
+                <img class="elixImage" src="public/images/elix-image-03.jpg" />
+              </elix-carousel>
             </sds-theme-provider>
-          </div>
-          <div class="neo-item neo-item_empty neo-connector-in row-exp-js">
-            <p>↑</p>
-            <p>Disney extends directly from SDS</p>
-          </div>
-          <div class="neo-item neo-item_empty neo-connector-in row-exp-js">
-            <p>↑</p>
-            <p>Heroku extends directly from Purple 3</p>
-          </div>
-          <div class="neo-item neo-item_empty neo-connector-in row-exp-js">
-            <p>↑</p>
-            <p>IBM extends directly from Carbon Design System</p>
           </div>
 
           <!-- Product -->
@@ -167,79 +165,53 @@
           <div class="neo-item neo-connector-in neo-item_empty row-product">
             <p>
               Sales
-              <span class="neo-item_meta">uses LEX buttons</span>
+              <span class="neo-item_meta">uses LEX carousel</span>
             </p>
             <p>↑</p>
           </div>
           <div class="neo-item neo-connector-in neo-item_empty row-product">
             <p>
               Service
-              <span class="neo-item_meta">uses LEX buttons</span>
+              <span class="neo-item_meta">uses LEX carousel</span>
             </p>
             <p>↑</p>
           </div>
           <div class="neo-item neo-connector-in neo-item_empty row-product">
             <p>
               Platform
-              <span class="neo-item_meta">uses LEX buttons</span>
+              <span class="neo-item_meta">uses LEX carousel</span>
             </p>
             <p>↑</p>
           </div>
           <div class="neo-item neo-connector-in neo-item_empty row-product">
             <p>
               +7 more
-              <span class="neo-item_meta">uses LEX buttons</span>
+              <span class="neo-item_meta">uses LEX carousel</span>
             </p>
             <p>↑</p>
           </div>
           <div class="neo-item neo-connector-in neo-item_empty row-product">
             <p>
               WWW
-              <span class="neo-item_meta">uses Digital Experience buttons</span>
+              <span class="neo-item_meta"
+                >uses Digital Experience carousel</span
+              >
             </p>
             <p>↑</p>
           </div>
           <div class="neo-item neo-connector-in neo-item_empty row-product">
             <p>
               Trailhead
-              <span class="neo-item_meta">uses Digital Experience buttons</span>
+              <span class="neo-item_meta"
+                >uses Digital Experience carousel</span
+              >
             </p>
             <p>↑</p>
           </div>
           <div class="neo-item neo-connector-in neo-item_empty row-product">
             <p>
               Carmax.com
-              <span class="neo-item_meta">uses Carmax buttons</span>
-            </p>
-            <p>↑</p>
-          </div>
-          <div class="neo-item neo-connector-in neo-item_empty row-product">
-            <p>
-              Carmax Cloud
-              <span class="neo-item_meta">uses Carmax buttons</span>
-            </p>
-            <p>↑</p>
-          </div>
-          <div class="neo-item neo-connector-in row-product">
-            <h3>Disney</h3>
-            <sds-theme-provider system="disney">
-              <sds-button>Standard</sds-button>
-              <sds-button variant="neutral">Neutral</sds-button>
-              <sds-button variant="brand">Brand</sds-button>
-              <sds-button variant="brand-outline">Brand Outline</sds-button>
-            </sds-theme-provider>
-          </div>
-          <div class="neo-item neo-connector-in neo-item_empty row-product">
-            <p>
-              Heroku
-              <span class="neo-item_meta">uses Purple3 buttons</span>
-            </p>
-            <p>↑</p>
-          </div>
-          <div class="neo-item neo-connector-in neo-item_empty row-product">
-            <p>
-              IBM
-              <span class="neo-item_meta">uses Carbon buttons</span>
+              <span class="neo-item_meta">uses Carmax carousel</span>
             </p>
             <p>↑</p>
           </div>

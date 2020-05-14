@@ -1,2 +1,4 @@
 import SdsButton from './sdsButton';
-export { SdsButton };
+import SdsCarouselSlideshow from './sdsCarouselSlideshow';
+
+export { SdsButton, SdsCarouselSlideshow };

@@ -1,517 +1,532 @@
 @font-face {
-    font-display: fallback;
-    font-family: 'Salesforce Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/SalesforceSans-Regular.ttf');
+  font-display: fallback;
+  font-family: 'Salesforce Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/SalesforceSans-Regular.ttf');
 }
 
 @font-face {
-    font-display: fallback;
-    font-family: 'Salesforce Sans';
-    font-style: bold;
-    font-weight: 700;
-    src: url('../fonts/SalesforceSans-Bold.ttf');
+  font-display: fallback;
+  font-family: 'Salesforce Sans';
+  font-style: bold;
+  font-weight: 700;
+  src: url('../fonts/SalesforceSans-Bold.ttf');
 }
 
 @font-face {
-    font-display: fallback;
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/OpenSans-Regular.ttf');
+  font-display: fallback;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/OpenSans-Regular.ttf');
 }
 
 @font-face {
-    font-display: fallback;
-    font-family: 'Open Sans';
-    font-style: bold;
-    font-weight: 700;
-    src: url('../fonts/OpenSans-Bold.ttf');
+  font-display: fallback;
+  font-family: 'Open Sans';
+  font-style: bold;
+  font-weight: 700;
+  src: url('../fonts/OpenSans-Bold.ttf');
 }
 
 @font-face {
-    font-family: 'IBM Plex Mono';
-    font-style: italic;
-    font-weight: 300;
-    font-display: auto;
-    src: local('IBM Plex Mono Light Italic'), local('IBMPlexMono-LightItalic'),
-        url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6sfjptAgt5VM-kVkqdyU8n1ioSflV1gMoW.woff)
-            format('woff');
+  font-family: 'IBM Plex Mono';
+  font-style: italic;
+  font-weight: 300;
+  font-display: auto;
+  src: local('IBM Plex Mono Light Italic'), local('IBMPlexMono-LightItalic'),
+    url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6sfjptAgt5VM-kVkqdyU8n1ioSflV1gMoW.woff)
+      format('woff');
 }
 
 @font-face {
-    font-family: 'IBM Plex Mono';
-    font-style: italic;
-    font-weight: 400;
-    font-display: auto;
-    src: local('IBM Plex Mono Italic'), local('IBMPlexMono-Italic'),
-        url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6pfjptAgt5VM-kVkqdyU8n1ioa1Xdm.woff)
-            format('woff');
+  font-family: 'IBM Plex Mono';
+  font-style: italic;
+  font-weight: 400;
+  font-display: auto;
+  src: local('IBM Plex Mono Italic'), local('IBMPlexMono-Italic'),
+    url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6pfjptAgt5VM-kVkqdyU8n1ioa1Xdm.woff)
+      format('woff');
 }
 
 @font-face {
-    font-family: 'IBM Plex Mono';
-    font-style: italic;
-    font-weight: 600;
-    font-display: auto;
-    src: local('IBM Plex Mono SemiBold Italic'),
-        local('IBMPlexMono-SemiBoldItalic'),
-        url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6sfjptAgt5VM-kVkqdyU8n1ioSClN1gMoW.woff)
-            format('woff');
+  font-family: 'IBM Plex Mono';
+  font-style: italic;
+  font-weight: 600;
+  font-display: auto;
+  src: local('IBM Plex Mono SemiBold Italic'),
+    local('IBMPlexMono-SemiBoldItalic'),
+    url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6sfjptAgt5VM-kVkqdyU8n1ioSClN1gMoW.woff)
+      format('woff');
 }
 
 @font-face {
-    font-family: 'IBM Plex Mono';
-    font-style: normal;
-    font-weight: 300;
-    font-display: auto;
-    src: local('IBM Plex Mono Light'), local('IBMPlexMono-Light'),
-        url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6qfjptAgt5VM-kVkqdyU8n3oQIwlBFhA.woff)
-            format('woff');
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-display: auto;
+  src: local('IBM Plex Mono Light'), local('IBMPlexMono-Light'),
+    url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6qfjptAgt5VM-kVkqdyU8n3oQIwlBFhA.woff)
+      format('woff');
 }
 
 @font-face {
-    font-family: 'IBM Plex Mono';
-    font-style: normal;
-    font-weight: 400;
-    font-display: auto;
-    src: local('IBM Plex Mono'), local('IBMPlexMono'),
-        url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F63fjptAgt5VM-kVkqdyU8n1i8q0Q.woff)
-            format('woff');
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: local('IBM Plex Mono'), local('IBMPlexMono'),
+    url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F63fjptAgt5VM-kVkqdyU8n1i8q0Q.woff)
+      format('woff');
 }
 
 @font-face {
-    font-family: 'IBM Plex Mono';
-    font-style: normal;
-    font-weight: 600;
-    font-display: auto;
-    src: local('IBM Plex Mono SemiBold'), local('IBMPlexMono-SemiBold'),
-        url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6qfjptAgt5VM-kVkqdyU8n3vAOwlBFhA.woff)
-            format('woff');
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: auto;
+  src: local('IBM Plex Mono SemiBold'), local('IBMPlexMono-SemiBold'),
+    url(https://fonts.gstatic.com/s/ibmplexmono/v4/-F6qfjptAgt5VM-kVkqdyU8n3vAOwlBFhA.woff)
+      format('woff');
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    margin: 0;
+  margin: 0;
 }
 
 body {
-    background-color: #fff;
-    font-family: -apple-system, BlinkMacSystemFont;
-    -webkit-tap-highlight-color: transparent;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont;
+  -webkit-tap-highlight-color: transparent;
 }
 
 :not(:defined) {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 #componentGrid {
-    display: grid;
+  display: grid;
 }
 
 #componentGrid > * {
-    box-sizing: border-box;
-    padding: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.5rem;
 }
 
 body:not(.show-lightning) .lightning {
-    display: none;
+  display: none;
 }
 body:not(.show-plain) .plain {
-    display: none;
+  display: none;
 }
 body:not(.show-carbon) .carbon {
-    display: none;
+  display: none;
 }
 
 .lightning :not(.componentName) {
-    font-family: Salesforce Sans, Arial, sans-serif;
-    font-size: 0.8125rem;
+  font-family: Salesforce Sans, Arial, sans-serif;
+  font-size: 0.8125rem;
 }
 
 .carbon :not(.componentName) {
-    font-size: 1em;
-    line-height: 1.5;
-    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
 h1 {
-    background: white;
-    padding-bottom: 1rem;
-    /*
+  background: white;
+  padding-bottom: 1rem;
+  /*
     position: sticky;
     top: 0;
     */
-    z-index: 1;
+  z-index: 1;
 }
 
 .placeholder {
-    height: 100px;
-    width: 100px;
+  height: 100px;
+  width: 100px;
 }
 
 /* TODO: Remove card styles once carousels use real card components */
 .card {
-    border-radius: 0.25rem;
-    border: 1px solid #dddbda;
-    box-sizing: border-box;
+  border-radius: 0.25rem;
+  border: 1px solid #dddbda;
+  box-sizing: border-box;
 }
 
 .cardDetails {
-    background: #fff;
-    box-sizing: border-box;
-    height: 6.625rem;
-    padding: 0.75rem;
-    text-align: center;
+  background: #fff;
+  box-sizing: border-box;
+  height: 6.625rem;
+  padding: 0.75rem;
+  text-align: center;
 }
 
 .cardImage {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .cardTitle {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
 }
 
 .elixImage {
-    display: inline-block;
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    vertical-align: middle;
+  display: inline-block;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  vertical-align: middle;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 
-/* NOTE: need a better way to do this */
+/* NOTE: quick hack just to make things look nice */
 sds-button,
 carbon-button,
 purple3-button {
-    margin-bottom: 0.25em;
+  margin-bottom: 0.25em;
+}
+elix-carousel,
+sds-carousel,
+sds-carousel-slideshow {
+  width: 350px;
+  display: block;
 }
 
 body {
-    font-family: 'Salesforce Sans';
-    background-position: bottom right;
-    background-repeat: no-repeat; */
+  font-family: 'Salesforce Sans';
+  background-position: bottom right;
+  background-repeat: no-repeat;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 h1 {
-    /*
+  /*
 background: white;
 position: sticky;
 top: 0;
 z-index: 1;
 */
-    margin: 0 0 2.5rem;
-    padding: 0;
+  margin: 0 0 2.5rem;
+  padding: 0;
 }
 
 h2 {
-    font-size: 1.25rem;
-    margin-top: 0;
-    font-weight: normal;
-    color: #466891;
+  font-size: 1.25rem;
+  margin-top: 0;
+  font-weight: normal;
+  color: #466891;
 }
 
 h3,
 h4 {
-    margin: 0 0 1rem;
-    font-weight: normal;
+  margin: 0 0 1rem;
+  font-weight: normal;
 }
 
 h3 {
-    font-size: 1rem;
-    margin-bottom: 1.25rem;
-    color: #466891;
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+  color: #466891;
 }
 
 h4 {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
 .placeholder {
-    height: 100px;
-    width: 100px;
+  height: 100px;
+  width: 100px;
 }
 
 .elixImage {
-    display: inline-block;
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    vertical-align: middle;
+  display: inline-block;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  vertical-align: middle;
 }
 
 .neo-container {
-    display: grid;
-    grid-template-columns: [sidebar-start] 0.5fr [content];
-    align-items: stretch;
-    grid-gap: 20px;
+  display: grid;
+  grid-template-columns: [sidebar-start] 0.5fr [content];
+  align-items: stretch;
+  justify-items: stretch;
+  grid-gap: 20px;
 }
 
 .neo-header {
-    grid-column: sidebar-start;
-    padding: 1.5rem;
-    padding-left: 0;
+  grid-column: sidebar-start;
+  padding: 1.5rem;
+  padding-left: 0;
 }
 
 .neo-header p {
-    font-size: 0.825rem;
-    color: #7e9ec4;
-    align-self: center;
-    margin-bottom: 0;
+  font-size: 0.825rem;
+  color: #7e9ec4;
+  align-self: center;
+  margin-bottom: 0;
 }
 
 .neo-item {
-    padding: 1.5rem;
-    border-radius: 18px;
-    background: #ffffff;
-    box-shadow: 4px 4px 12px #e8e9ee;
-    position: relative;
-    min-width: 250px;
+  padding: 1.5rem;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 4px 4px 12px #e8e9ee;
+  position: relative;
 }
 
 .neo-item p {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 .neo-item p:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .neo-connector-out:before,
 .neo-connector-in:after {
-    content: '';
-    height: 14px;
-    border-left: 2px dotted #b0c4df;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    z-index: 99999;
-    margin-bottom: 3px;
+  content: '';
+  height: 14px;
+  border-left: 2px dotted #b0c4df;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  z-index: 99999;
+  margin-bottom: 3px;
 }
 
 .neo-connector-in:after {
-    display: block;
-    bottom: auto;
-    top: 100%;
-    margin-bottom: 0;
-    margin-top: 3px;
+  display: block;
+  bottom: auto;
+  top: 100%;
+  margin-bottom: 0;
+  margin-top: 3px;
 }
 
 .neo-item_empty {
-    box-shadow: none;
-    border: 2px dotted #ced3da;
-    text-align: center;
-    color: #7e9ec4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-width: 125px;
+  box-shadow: none;
+  border: 2px dotted #ced3da;
+  text-align: center;
+  color: #7e9ec4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 125px;
 }
 
 .neo-item_empty:after {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .neo-item_filled {
-    background-color: #fff;
-    text-align: center;
-    color: #7e9ec4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-width: 175px;
+  background-color: #fff;
+  text-align: center;
+  color: #7e9ec4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 175px;
 }
 
 .neo-item_meta {
-    display: block;
-    font-size: 0.625rem;
-    margin-top: 0.25rem;
+  display: block;
+  font-size: 0.625rem;
+  margin-top: 0.25rem;
 }
 
 .neo-item_meta:first-letter {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .row-bwc {
-    grid-row: 6 / 7;
+  grid-row: 6 / 7;
 }
 
 .row-ds {
-    grid-row: 5 / 6;
+  grid-row: 5 / 6;
 }
 
 .row-js {
-    grid-row: 4 / 5;
-    align-self: auto;
+  grid-row: 4 / 5;
+  align-self: auto;
 }
 
 .row-js h2,
 .row-js h3 {
-    margin: 0;
+  margin: 0;
 }
 
 .row-exp {
-    grid-row: 3 / 4;
+  grid-row: 3 / 4;
 }
 
 .row-exp-js {
-    grid-row: 3 / 5;
+  grid-row: 3 / 5;
 }
 
 .row-product {
-    grid-row: 2 / 3;
+  grid-row: 2 / 3;
 }
 
 .row-cat {
-    grid-row: 1 / 2;
+  grid-row: 1 / 2;
 }
 
 .col-span-2 {
-    grid-column: span 2;
+  grid-column: span 2;
 }
 
 .col-span-3 {
-    grid-column: span 3;
+  grid-column: span 3;
 }
 
 .col-span-4 {
-    grid-column: span 4;
+  grid-column: span 4;
 }
 
 .col-span-5 {
-    grid-column: span 5;
+  grid-column: span 5;
 }
 
 .col-span-6 {
-    grid-column: span 6;
+  grid-column: span 6;
 }
 
 .col-span-7 {
-    grid-column: span 7;
+  grid-column: span 7;
 }
 
 .col-span-8 {
-    grid-column: span 8;
+  grid-column: span 8;
 }
 
 .col-span-9 {
-    grid-column: span 9;
+  grid-column: span 9;
 }
 
 .col-span-10 {
-    grid-column: span 10;
+  grid-column: span 10;
 }
 
 .col-span-11 {
-    grid-column: span 11;
+  grid-column: span 11;
 }
 
 .col-span-12 {
-    grid-column: span 12;
+  grid-column: span 12;
 }
 
 .neo-layout {
-    display: grid;
-    grid-template-columns: 1fr;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .neo-content {
-    padding: 2.5rem;
-    padding-top: 3rem;
+  padding: 2.5rem;
+  padding-top: 3rem;
 }
 
 .neo-nav {
-    padding: 2.5rem;
-    box-shadow: 8px 8px 18px #e8e9ee;
-    min-height: 100vh;
-    display: none;
+  padding: 2.5rem;
+  box-shadow: 8px 8px 18px #e8e9ee;
+  min-height: 100vh;
+  display: none;
+}
+
+.neo-nav ul {
+  margin: 1rem 0;
 }
 
 .neo-brand-name {
-    margin: 1rem 0 3rem;
-    padding-bottom: 2.75rem;
-    border-bottom: 1px dotted #aaa;
-    font-weight: bold;
+  margin: 1rem 0 3rem;
+  padding-bottom: 2.75rem;
+  border-bottom: 1px dotted #aaa;
+  font-weight: bold;
 }
 
 .neo-nav-item {
-    color: #0070d2;
-    display: block;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.85rem;
-    padding: 0.75rem 0;
-    letter-spacing: 0.085em;
+  color: #0070d2;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 0.75rem 0;
+  letter-spacing: 0.085em;
 }
 
 .neo-nav-item-active {
-    background-color: #edf2f8;
-    color: #111;
-    margin: 0 -2.5rem;
-    padding-left: 2.5rem;
+  background-color: #edf2f8;
+  color: #111;
+  margin: 0 -2.5rem;
+  padding-left: 2.5rem;
 }
 
 .neo-title {
-    background: url('../images/bg.png');
-    background-size: contain;
-    padding: 2.5rem;
-    color: #fff;
-    font-weight: bold;
-    margin: -3rem -2.5rem 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background: url('../images/bg.png');
+  background-size: contain;
+  padding: 2.5rem;
+  color: #fff;
+  font-weight: bold;
+  margin: -3rem -2.5rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
 .neo-theme-toggle {
-    width: 72px;
+  width: 72px;
 }
 
 .neo-has-sidebar .neo-nav {
-    display: block;
+  display: block;
 }
 
 .neo-has-sidebar.neo-layout {
-    grid-template-columns: 1.5fr 10.5fr;
+  grid-template-columns: 1.5fr 10.5fr;
 }
 
 .neo-cat {
-    border-bottom: 1px dashed #b0c4df;
-    text-transform: uppercase;
-    color: #b0c4df;
-    font-size: 0.75rem;
-    font-weight: bold;
-    letter-spacing: 0.085em;
-    padding-bottom: 0.5rem;
+  border-bottom: 1px dashed #b0c4df;
+  text-transform: uppercase;
+  color: #b0c4df;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.085em;
+  padding-bottom: 0.5rem;
 }
 
 .neo-cat-on-platform {
-    grid-column: 2 / 11;
+  grid-column: 2 / 11;
 }
 
 .neo-cat-off-platform {
-    grid-column: 11 / 13;
+  grid-column: 11 / 13;
+}
+
+.neo-layout_carousel .neo-cat-on-platform {
+  grid-column: 2 / 9;
 }

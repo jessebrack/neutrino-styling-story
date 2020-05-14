@@ -6,6 +6,15 @@
     <title>Neutrino - Button</title>
     <link rel="stylesheet" href="/public/css/main.css" />
     <script src="dist/app.js" type="module"></script>
+    <script type="module">
+      // NOTE - super quick hack job just to see it in action
+      const sidebarToggle = document.querySelector('.neo-title');
+      const layout = document.querySelector('.neo-layout');
+      const toggleSidebar = () => {
+        layout.classList.toggle('neo-has-sidebar');
+      };
+      sidebarToggle.addEventListener('click', () => toggleSidebar());
+    </script>
   </head>
 
   <body>
@@ -14,6 +23,7 @@
         <p class="neo-brand-name">
           Neutrino
         </p>
+        <h2>Components</h2>
         <ul>
           <li><a href="#" class="neo-nav-item">Accordion</a></li>
           <li><a href="#" class="neo-nav-item">Alert</a></li>
@@ -21,15 +31,17 @@
           <li><a href="#" class="neo-nav-item">Badges</a></li>
           <li><a href="#" class="neo-nav-item">Breadcrumbs</a></li>
           <li>
-            <span href="#" class="neo-nav-item neo-nav-item-active"
-              >Button</span
-            >
+            <span class="neo-nav-item neo-nav-item-active">Button</span>
           </li>
+          <li><a href="carousel.html" class="neo-nav-item">Carousel</a></li>
           <li><a href="#" class="neo-nav-item">Combobox</a></li>
           <li><a href="#" class="neo-nav-item">Datatable</a></li>
           <li><a href="#" class="neo-nav-item">Dialog</a></li>
         </ul>
         <h2>Recipes</h2>
+        <ul>
+          <li><a href="#" class="neo-nav-item">Card</a></li>
+        </ul>
       </nav>
       <main class="neo-content">
         <h1 class="neo-title">
